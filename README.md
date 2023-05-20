@@ -1,1 +1,3 @@
 # Decisions.OpenAI
+
+This module is intended for testing purposes only and should not be relied upon for any critical or real-world applications.
