@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExportDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>OpenAI</Name>
+  <ParentFolderId>SERVICE CATALOG FOLDER</ParentFolderId>
+  <ParentFolderPath>System/Applications/Workflow Catalog</ParentFolderPath>
+  <TypeName>DecisionsFramework.ServiceLayer.Services.Folder.Folder</TypeName>
+  <ShortTypeName>Folder</ShortTypeName>
+  <Id>01H0X4YSXKYKKBN0539SC23R0E</Id>
+  <ExportedBy>admin@decisions.com</ExportedBy>
+  <ExportedOn>2023-05-21T13:13:18.4916077-04:00</ExportedOn>
+  <PlatformVersion>8.12.0.71890</PlatformVersion>
+  <DependsOn />
+  <DependsOnAssemblies />
+  <StructureImport>false</StructureImport>
+  <DependsOnStructures>false</DependsOnStructures>
+  <Size>670</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgAqWm1VgRhbOMbAgAAIwQAAAsAAABKc29uU3RvcmFnZZRSy27iMBT9lSjrDJgAhVZiAUmYUh5BJGLKamSSS2PV2JHjgKKKfx+bmNDOYzFeYM655z7OdT5sZD992Fv98zMO1+HkJfBi+wk5Cu7WwWq8DOwn24eEFISzYirwEc5cvLciECeSwAJXIG6gaE05TRWuL8f6M8+xtiA0NRq2Om4LtZBjeSWVpYARg1IKTB1rXe4pSeZQxfwd2IiVlNqOfbgWnflqHtR5Rq+9XfQ6383nkxXqdx8jz+1uUNDoJpDhE+EirnL4Hwfmj4clpvztNzj9Ulr1KjJ+nrFYgO4hNVHul8DKRqI7H7AyqGIJZhPYcC4Ve2gG1QOu1EyKrMs3kVBopNwqhrAMBJFrEEdSXI2YhgwKSdjbAk5AFdXT2WpfaywzBaOqkHBsj/NcLRRLndf+ocwfKD9bxlQ7zIGNZ7pJUevNHMYRJKXqXNXkLNVVd1EcLK1puPCDTZ33RWT8ZbiIyn1NFYZLMkJTAewZn+CWZEKYVZ6J+nzF5V8kumKuXvJAIN0SON9okqbAbmXSI2GkUF+S5EKLQkZv+cDk3Yn+kKJgs515geWN4/Ei/H63VCvNuzQLSgRgCWnIfHWpwEN36KLOcDB8cHt9pI8SHXl6HfCzxh2gQa+nr1pjCk2qZpufEq/st/vRpoRa3AnSm0cDTYt+3x0OBo8uao7S+EBBNhkGhexfclIEKZEez+tdXRxbPzW6XH4JIMAAUEsBAjMAFAAACAgAqWm1VgRhbOMbAgAAIwQAAAsAAAAAAAAAAAAAAAAAAAAAAEpzb25TdG9yYWdlUEsFBgAAAAABAAEAOQAAAEQCAAAAAA==</Data>
+  <RequiresApproval>false</RequiresApproval>
+  <OverridingImport>false</OverridingImport>
+  <ModuleName>Decisions.OpenAI</ModuleName>
+  <ImportOrder>104</ImportOrder>
+  <ModifiedOn>2023-05-21T12:59:04.027</ModifiedOn>
+  <BehaviorTypeName>DecisionsFramework.ServiceLayer.Services.ServiceCatalog.ServiceCatalogFolderBehavior</BehaviorTypeName>
+  <TagData />
+</ExportDescription>
