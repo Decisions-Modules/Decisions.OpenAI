@@ -29,7 +29,7 @@ namespace Decisions.OpenAI.DataTypes
             }
             catch (Exception e)
             {
-                throw new BusinessRuleException(e.Message);
+                throw new BusinessRuleException("There was a problem deserializing response.", e);
             }
         }
     }
