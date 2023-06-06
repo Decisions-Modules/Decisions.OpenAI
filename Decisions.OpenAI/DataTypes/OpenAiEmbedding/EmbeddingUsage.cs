@@ -1,16 +1,16 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiEmbedding
 {
-    [DataContract]
+    [Writable]
     public class EmbeddingUsage
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("prompt_tokens")]
         public int PromptTokens { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("total_tokens")]
         public int TotalTokens { get; set; }
     }

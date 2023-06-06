@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiModel
 {
-    [DataContract]
+    [Writable]
     public class ModelList
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("data")]
         public List<OpenAiModel> Data { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("object")]
         public string Object { get; set; }
         

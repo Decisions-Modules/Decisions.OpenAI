@@ -1,18 +1,18 @@
 using System;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiEmbedding
 {
-    [DataContract]
+    [Writable]
     public class EmbeddingRequest
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("input")]
         public string[] Input { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("model")]
         public string Model { get; set; }
         

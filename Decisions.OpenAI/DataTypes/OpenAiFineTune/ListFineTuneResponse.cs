@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
 {
-    [DataContract]
+    [Writable]
     public class ListFineTuneResponse
     {
-        [DataMember]
-        public string @object { get; set; }
+        [WritableValue]
+        [JsonProperty("object")]
+        public string Object { get; set; }
         
-        [DataMember]
-        public List<FineTuneResponse> data { get; set; }
+        [WritableValue]
+        [JsonProperty("data")]
+        public List<FineTuneResponse> Data { get; set; }
         
         public static ListFineTuneResponse JsonDeserialize(string json)
         {

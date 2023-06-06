@@ -1,31 +1,37 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiCompletion
 {
-    [DataContract]
+    [Writable]
     public class CompletionResponse
     {
-        [DataMember]
-        public string id { get; set; }
+        [WritableValue]
+        [JsonProperty("id")]
+        public string Id { get; set; }
         
-        [DataMember]
-        public string @object { get; set; }
+        [WritableValue]
+        [JsonProperty("object")]
+        public string Object { get; set; }
         
-        [DataMember]
-        public string model { get; set; }
+        [WritableValue]
+        [JsonProperty("model")]
+        public string Model { get; set; }
         
-        [DataMember]
-        public int created { get; set; }
+        [WritableValue]
+        [JsonProperty("created")]
+        public int Created { get; set; }
         
-        [DataMember]
-        public List<CompletionChoice> choices { get; set; }
+        [WritableValue]
+        [JsonProperty("choices")]
+        public List<CompletionChoice> Choices { get; set; }
         
-        [DataMember]
-        public Usage usage { get; set; }
+        [WritableValue]
+        [JsonProperty("usage")]
+        public Usage Usage { get; set; }
         
         public static CompletionResponse JsonDeserialize(string json)
         {

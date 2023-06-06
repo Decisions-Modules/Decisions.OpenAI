@@ -1,17 +1,17 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
 {
-    [DataContract]
+    [Writable]
     public class OpenAiFineTune
     {
-        [DataMember]
+        [WritableValue]
         public FineTuneEvent Event { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public FineTuneHyperparams Hyperparams { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public FineTuneResponse Response { get; set; }
     }
 }

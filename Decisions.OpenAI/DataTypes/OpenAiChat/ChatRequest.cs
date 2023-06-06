@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiChat
 {
-    [DataContract]
+    [Writable]
     public class ChatRequest
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("model")]
         public string Model { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("messages")]
         public List<ChatMessage> Messages { get; set; }
 

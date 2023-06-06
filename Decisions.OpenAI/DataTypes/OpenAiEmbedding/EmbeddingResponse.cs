@@ -1,27 +1,27 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiEmbedding
 {
-    [DataContract]
+    [Writable]
     public class EmbeddingResponse
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("object")]
         public string Object { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("data")]
         public List<EmbeddingData> Data { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("model")]
         public string Model { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("usage")]
         public EmbeddingUsage Usage { get; set; }
         

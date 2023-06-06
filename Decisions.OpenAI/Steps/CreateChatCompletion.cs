@@ -78,7 +78,7 @@ namespace Decisions.OpenAI.Steps
                 request = JsonConvert.DeserializeObject<ChatRequest>((string)sData.FlowDataAtStepStart[CHAT_COMPLETION_ID]);
             }
             
-            request.Messages.Add(new ChatMessage(){role = "user", content = message});
+            request.Messages.Add(new ChatMessage(){Role = "user", Content = message});
             
             request.Model = ChatModel;
 
@@ -86,13 +86,13 @@ namespace Decisions.OpenAI.Steps
             
             ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
             
-            request.Messages.Add(chatResponse.choices[chatResponse.choices.Count-1].message);
+            request.Messages.Add(chatResponse.Choices[chatResponse.Choices.Count-1].Message);
 
             string conversation = null;
             
             foreach (ChatMessage chat in request.Messages)
             {
-                conversation += $"{chat.role}: {chat.content}\n";
+                conversation += $"{chat.Role}: {chat.Content}\n";
             }
 
             data[CHAT_COMPLETION_ID] = request.JsonSerialize();

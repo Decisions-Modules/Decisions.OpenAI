@@ -1,22 +1,22 @@
 using System;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiEdit
 {
-    [DataContract]
+    [Writable]
     public class EditRequest
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("model")]
         public string Model { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("input")]
         public string Input { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("instruction")]
         public string Instruction { get; set; }
         

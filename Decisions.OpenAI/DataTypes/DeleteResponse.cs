@@ -1,21 +1,24 @@
 using System;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes
 {
-    [DataContract]
+    [Writable]
     public class DeleteResponse
     {
-        [DataMember]
-        public string id { get; set; }
+        [WritableValue]
+        [JsonProperty("id")]
+        public string Id { get; set; }
         
-        [DataMember]
-        public string @object { get; set; }
+        [WritableValue]
+        [JsonProperty("object")]
+        public string Object { get; set; }
         
-        [DataMember]
-        public bool deleted { get; set; }
+        [WritableValue]
+        [JsonProperty("deleted")]
+        public bool Deleted { get; set; }
         
         public static DeleteResponse JsonDeserialize(string json)
         {

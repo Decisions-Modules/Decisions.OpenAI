@@ -1,23 +1,23 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiModeration
 {
-    [DataContract]
+    [Writable]
     public class ModerationResponse
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("id")]
         public string Id { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("model")]
         public string Model { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("results")]
         public List<ModerationResults> Results { get; set; }
         

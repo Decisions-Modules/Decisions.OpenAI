@@ -1,35 +1,35 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiModeration
 {
-    [DataContract]
+    [Writable]
     public class ModerationCategoryScores
     {
-        [DataMember] [JsonProperty("sexual")]
+        [WritableValue] [JsonProperty("sexual")]
         public decimal FlagSexual;
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("hate")]
         public decimal FlagHate;
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("violence")]
         public decimal FlagViolence;
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("self-harm")]
         public decimal FlagSelfHarm;
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("sexual/minors")]
         public decimal FlagMinors;
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("hate/threatening")]
         public decimal FlagThreatening;
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("violence/graphic")]
         public decimal FlagGraphic;
     }

@@ -1,20 +1,20 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiModeration
 {
-    [DataContract]
+    [Writable]
     public class ModerationResults
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("flagged")]
         public bool Flagged { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("categories")]
         public ModerationCategories Categories { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("category_scores")]
         public ModerationCategoryScores CategoryScores { get; set; }
     }

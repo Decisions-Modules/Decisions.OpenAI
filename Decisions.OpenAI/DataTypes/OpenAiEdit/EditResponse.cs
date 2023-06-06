@@ -1,28 +1,33 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiEdit
 {
-    [DataContract]
+    [Writable]
     public class EditResponse
     {
-        [DataMember]
-        public string id { get; set; }
+        [WritableValue]
+        [JsonProperty("id")]
+        public string Id { get; set; }
         
-        [DataMember]
-        public string @object { get; set; }
+        [WritableValue]
+        [JsonProperty("object")]
+        public string Object { get; set; }
         
-        [DataMember]
-        public int created { get; set; }
+        [WritableValue]
+        [JsonProperty("created")]
+        public int Created { get; set; }
         
-        [DataMember]
-        public List<EditChoice> choices { get; set; }
+        [WritableValue]
+        [JsonProperty("choices")]
+        public List<EditChoice> Choices { get; set; }
         
-        [DataMember]
-        public Usage usage { get; set; }
+        [WritableValue]
+        [JsonProperty("usage")]
+        public Usage Usage { get; set; }
         
         public static EditResponse JsonDeserialize(string json)
         {

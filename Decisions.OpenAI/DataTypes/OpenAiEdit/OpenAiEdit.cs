@@ -1,17 +1,17 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiEdit
 {
-    [DataContract]
+    [Writable]
     public class OpenAiEdit
     {
-        [DataMember]
+        [WritableValue]
         public EditChoice Choice { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public EditResponse Response { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public Usage Usage { get; set; }
     }
 }

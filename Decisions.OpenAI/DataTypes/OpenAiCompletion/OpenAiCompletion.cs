@@ -1,17 +1,17 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiCompletion
 {
-    [DataContract]
+    [Writable]
     public class OpenAiCompletion
     {
-        [DataMember]
+        [WritableValue]
         public CompletionChoice Choice { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public CompletionResponse Response { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public Usage Usage { get; set; }
     }
 }

@@ -1,30 +1,30 @@
 using System;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiCompletion
 {
-    [DataContract]
+    [Writable]
     public class CompletionRequest
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("model")]
         public string Model { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("prompt")]
         public string Prompt { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("max_tokens")]
         public int MaxTokens { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("temperature")]
         public double Temperature { get; set; }
         
-        [DataMember]
+        [WritableValue]
         [JsonProperty("n")]
         public int N { get; set; }
 

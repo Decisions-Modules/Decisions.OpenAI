@@ -1,20 +1,25 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
+using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
 {
-    [DataContract]
+    [Writable]
     public class FineTuneEvent
     {
-        [DataMember]
-        public string @object { get; set; }
+        [WritableValue]
+        [JsonProperty("object")]
+        public string Object { get; set; }
         
-        [DataMember]
-        public int created_at { get; set; }
+        [WritableValue]
+        [JsonProperty("created_at")]
+        public int CreatedAt { get; set; }
         
-        [DataMember]
-        public string level { get; set; }
+        [WritableValue]
+        [JsonProperty("level")]
+        public string Level { get; set; }
         
-        [DataMember]
-        public string message { get; set; }
+        [WritableValue]
+        [JsonProperty("message")]
+        public string Message { get; set; }
     }
 }

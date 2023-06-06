@@ -1,14 +1,14 @@
 using System;
-using System.Runtime.Serialization;
 using DecisionsFramework;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiModeration
 {
-    [DataContract]
+    [Writable]
     public class ModerationRequest
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("input")]
         public string Input { get; set; }
         

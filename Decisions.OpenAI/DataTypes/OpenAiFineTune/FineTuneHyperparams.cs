@@ -1,20 +1,25 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
+using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
 {
-    [DataContract]
+    [Writable]
     public class FineTuneHyperparams
     {
-        [DataMember]
-        public int? batch_size { get; set; }
+        [WritableValue]
+        [JsonProperty("batch_size")]
+        public int? BatchSize { get; set; }
         
-        [DataMember]
-        public double? learning_rate_multiplier { get; set; }
+        [WritableValue]
+        [JsonProperty("learning_rate_multiplier")]
+        public double? LearningRateMultiplier { get; set; }
         
-        [DataMember]
-        public int? n_epochs { get; set; }
+        [WritableValue]
+        [JsonProperty("n_epochs")]
+        public int? NumberOfEpochs { get; set; }
         
-        [DataMember]
-        public double? prompt_loss_weight { get; set; }
+        [WritableValue]
+        [JsonProperty("prompt_loss_weight")]
+        public double? PromptLossWeight { get; set; }
     }
 }

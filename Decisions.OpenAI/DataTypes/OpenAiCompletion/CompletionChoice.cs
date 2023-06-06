@@ -1,20 +1,25 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
+using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiCompletion
 {
-    [DataContract]
+    [Writable]
     public class CompletionChoice
     {
-        [DataMember]
-        public string text { get; set; }
+        [WritableValue]
+        [JsonProperty("text")]
+        public string Text { get; set; }
         
-        [DataMember]
-        public int index { get; set; }
+        [WritableValue]
+        [JsonProperty("index")]
+        public int Index { get; set; }
         
-        [DataMember]
-        public int? logprobs { get; set; }
+        [WritableValue]
+        [JsonProperty("logprobs")]
+        public int? Logprobs { get; set; }
         
-        [DataMember]
-        public string finish_reason { get; set; }
+        [WritableValue]
+        [JsonProperty("finish_reason")]
+        public string FinishReason { get; set; }
     }
 }

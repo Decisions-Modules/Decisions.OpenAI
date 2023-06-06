@@ -34,7 +34,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             
             string extension = "fine-tunes";
             FineTuneRequest request = new FineTuneRequest();
-            request.training_file = trainingFileId;
+            request.TrainingFile = trainingFileId;
             
             string fineTuneRequest = request.JsonSerialize();
             FineTuneResponse fineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(fineTuneRequest, extension, ApiKeyOverride));

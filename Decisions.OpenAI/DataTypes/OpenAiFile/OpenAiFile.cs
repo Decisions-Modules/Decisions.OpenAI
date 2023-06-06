@@ -1,57 +1,33 @@
-﻿using System.Runtime.Serialization;
+﻿using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiFile
 {
-    [DataContract]
+    [Writable]
     public class OpenAiFile
     {
-        [DataMember]
+        [WritableValue]
         [JsonProperty("id")]
-        public string Id
-        {
-            get;
-            set;
-        }
+        public string Id { get; set; }
 
-        [DataMember]
+        [WritableValue]
         [JsonProperty("purpose")]
-        public string Purpose
-        {
-            get;
-            set;
-        }
+        public string Purpose { get; set; }
 
-        [DataMember]
+        [WritableValue]
         [JsonProperty("filename")]
-        public string FileName
-        {
-            get;
-            set;
-        }
+        public string FileName { get; set; }
 
-        [DataMember]
+        [WritableValue]
         [JsonProperty("bytes")]
-        public int bytes
-        {
-            get;
-            set;
-        }
+        public int Bytes { get; set; }
 
-        [DataMember]
+        [WritableValue]
         [JsonProperty("created_at")]
-        public int CreatedAt
-        {
-            get;
-            set;
-        }
+        public int CreatedAt { get; set; }
 
-        [DataMember]
+        [WritableValue]
         [JsonProperty("status")]
-        public string Status
-        {
-            get;
-            set;
-        }
+        public string Status { get; set; }
     }
 }

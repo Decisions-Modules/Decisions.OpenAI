@@ -1,20 +1,20 @@
-using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiChat
 {
-    [DataContract]
+    [Writable]
     public class OpenAiMessage
     {
-        [DataMember]
+        [WritableValue]
         public ChatChoice Choice { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public ChatMessage Message { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public ChatResponse Response { get; set; }
         
-        [DataMember]
+        [WritableValue]
         public Usage Usage { get; set; }
     }
 }
