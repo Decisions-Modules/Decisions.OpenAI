@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>     
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <LangVersion>9.0</LangVersion>
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+	<Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>    
+    <OutputType>Library</OutputType>
+    <RootNamespace>Decisions.OpenAI</RootNamespace>
+    <AssemblyName>$(RootNamespace)</AssemblyName>
+    <RootPath>../</RootPath>  
+    <BuildDest>$(RootPath)obj</BuildDest>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DecisionsSDK" Version="8.9.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Decisions\Decisions Server\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\CustomModuleImages\openai.svg">
+      <Link>openai.svg</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

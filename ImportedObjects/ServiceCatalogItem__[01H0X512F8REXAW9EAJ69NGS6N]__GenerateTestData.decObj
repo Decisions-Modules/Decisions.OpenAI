@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExportDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Generate Test Data</Name>
+  <ParentFolderId>01H0X4YSXKYKKBN0539SC23R0E</ParentFolderId>
+  <ParentFolderPath>System/Applications/Workflow Catalog/OpenAI</ParentFolderPath>
+  <TypeName>DecisionsFramework.ServiceLayer.Services.ServiceCatalog.ServiceCatalogItem</TypeName>
+  <ShortTypeName>Service Catalog Item</ShortTypeName>
+  <Id>01H0X512F8REXAW9EAJ69NGS6N</Id>
+  <ExportedBy>admin@decisions.com</ExportedBy>
+  <ExportedOn>2023-05-21T13:13:18.47113-04:00</ExportedOn>
+  <PlatformVersion>8.12.0.71890</PlatformVersion>
+  <DependsOn />
+  <DependsOnAssemblies />
+  <StructureImport>false</StructureImport>
+  <DependsOnStructures>false</DependsOnStructures>
+  <Size>990</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgAqWm1VjQhAKAWAQAASQEAAAEAAAAx8yrOzwsuyS9KTE8N8GZmEWFg4OBgiMnfEhZXlHfmGAMDgwgjAwM3kEZSWNJ/luuQgUBL/NI3li0/mq858Udp/7u2aOkrz6TYpRLCHtLeE/ft/vjA9eOmN9uND2/wT3hgq1jbn7yp7/riSgmVB4ZJHwXaLxaINrEnn/mkFL5pRkbdca+X0ncX1T2R1Kvs/cV8NJ2z4mTrrrqHa478nnJ6s0Pshc6Aq/EzLfb3HvHMPTevZvq2W1MC3eYc6LiU8UV1VlCx45wbc1zm6W7wu8K7VL9XwOFB0u609N/s2b4384oLLr9bNnlH4JXb/LtuM75ut87g2KO7JjOOiYchwJuRyZgBt4dRAUo4sbKBhBiB0BJIvwcrAABQSwMEFAAACAgAqWm1Vsu6FJD3AQAAXwMAAAsAAABKc29uU3RvcmFnZXRSTW/iMBD9K1HOKUpCIYDUA5DQD5YEkSwLp1WIB/DWsZHttEUV/33HIUB3V5tD5Hl+8+bNjD9t1x582kvz+5kl82T0Eo0ze+A6GK7nUTycRfbADqGgigquJjIv4V3I11YK8o0W8C0/grwE6nIY5zpnYvdX+KyhdKx/tRxrCdJAD72W57fclutY44rpSsIDh0rLnDnWvNowWkzhmIlX4A+8Ysx27CLnabXbgdKZ+K5AotctwvucEwYyxLqms2dSdzSiPJfHVAsJJNn8gkKbC+9kZK4GE0lqGRdl1F68J3wmNpRBo4wFFxVPtltG+QU7GGtqPxGyfBJKIzpUISi640CMyp9DCI249+SuOp4/6S2i1fBHPxq+dPvxY9qNv/DPUsYHVSYYHqT4oGWur172udzBTBBgiMSiznBs+Dhga0DC/KgyBMsDgzrnzjOjoYQAbxRyUlJOFU4Yh7KkgN2yY3MHXFN9nAiG87iZvl+nq+l6Oh3FbqfdT8d+e+FGV3aMG0XmI3BASbAyXIxVbwHdSkCIJDw8d9Bt93zX6wX9dje4b7v4IakUhG6p8X7j+IEbdDw8NJxGaGSMpus0i2ZfEmv07vaZJmWxp2+4iqbnJmxKdDp+Lwj6Z/VLiRDMyC4ZTZTw/9GpigjVY3E4zw4fVP3iTqffAgwAUEsBAjMAFAAACAgAqWm1VjQhAKAWAQAASQEAAAEAAAAAAAAAAAAAAAAAAAAAADFQSwECMwAUAAAICACpabVWy7oUkPcBAABfAwAACwAAAAAAAAAAAAAAAAA1AQAASnNvblN0b3JhZ2VQSwUGAAAAAAIAAgBoAAAAVQMAAAAA</Data>
+  <RequiresApproval>false</RequiresApproval>
+  <OverridingImport>false</OverridingImport>
+  <ModuleName>Decisions.OpenAI</ModuleName>
+  <ImportOrder>400</ImportOrder>
+  <ModifiedOn>2023-05-21T12:59:11.82</ModifiedOn>
+  <TagData />
+</ExportDescription>

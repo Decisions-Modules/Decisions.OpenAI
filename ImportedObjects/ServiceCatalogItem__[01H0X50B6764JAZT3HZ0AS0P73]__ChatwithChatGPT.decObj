@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExportDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Chat with Chat GPT</Name>
+  <ParentFolderId>01H0X4YSXKYKKBN0539SC23R0E</ParentFolderId>
+  <ParentFolderPath>System/Applications/Workflow Catalog/OpenAI</ParentFolderPath>
+  <TypeName>DecisionsFramework.ServiceLayer.Services.ServiceCatalog.ServiceCatalogItem</TypeName>
+  <ShortTypeName>Service Catalog Item</ShortTypeName>
+  <Id>01H0X50B6764JAZT3HZ0AS0P73</Id>
+  <ExportedBy>admin@decisions.com</ExportedBy>
+  <ExportedOn>2023-05-21T13:13:18.4932344-04:00</ExportedOn>
+  <PlatformVersion>8.12.0.71890</PlatformVersion>
+  <DependsOn />
+  <DependsOnAssemblies />
+  <StructureImport>false</StructureImport>
+  <DependsOnStructures>false</DependsOnStructures>
+  <Size>989</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgAqWm1Vhxgi2EUAQAASAEAAAEAAAAx8yrOzwsuyS9KTE8N8GZmEWFg4OBgCMjfEnZSuKL/KAMDgwgjAwM3kEZSWNLvzX3IQKDlv9fNYo6V+Vy2GWvfu18JutB9ZJeXodoEsy6P/7s/PnD9uOnNduPDG/wTBGwUa/trNz05fU+lT4hDonDH04+LrPsVG+zSKidmh/L07HgUO5v77oKdTyXPHWE+y951XqgzyKP236HCzusTA9w7ly1gXvm+PvXRXzMh/VLLci7rK+sD3SQ/Kml7ZxuEZHgrq3zcYXvCZvYj5YviIQs3BTE1Tn4tJX9X/oz8u4rlV3Pf3Lo4a3lp/cWcb7+0jyWv4Niju2ZVHBMPQ4A3I5MxA27/ogKUYGJlAwkxAqElkH4HVgAAUEsDBBQAAAgIAKlptVZqLQAt+AEAAF8DAAALAAAASnNvblN0b3JhZ2V0UtFu2jAU/ZUozylykoYAEg9AYLQMgpoMlb5MBl+IV8dGttMWVfz77BCg2zQ/RLnH5x6fc+1PF7m9T3dlPz/zdJkOH8ej3O0hz5Tr5XgxmI/dnpvAlioquJpIXMK7kK+tDOQb3cJ3fAR5KdTlZ4Q1ZmL/V/mgofScf7U8ZwXSQv1Oyw9aqIU8Z1QxXUnoc6i0xMxzltWG0e0Mjrl4Bd7nFWOu524xz6r9HpTOxQ8F0njdGbjAnDCQiTnXJnsgdaIh5VgeMy0kkHTzC7babvgnK3M1mEpSyyAjowrxnvK52FAGjbI58Kni6W7HKL9gB2tNFRMhy6lQ2qADlYCiew7Eqvw5hMSK+1P0HKFhO27fPw5e8nD6ggYZWsbhF/5ZyvqgyhaDgxQftMT66qXAcg9zQYAZZCHqDs+Fj4OJBiTBR5UbsDwwqHvufDsaSgjwRgGTknKqzITNUFYUTFp2bPaAa6qPE8HMPG6m79fZ82w9mw0XKAq72SgIn9D4yl6YGzXMUYG180514dR/35a5dSvBWCcpT84J2mEnQH4n7vpBF4XILEMqBaE7ar3fOEGM4siPo7jhNEJDazRbZ/l4/qWxRu9uy4aU24K+matoMjdlc0QUBZ047gbougwnATuyS0dTpfx/dKrGhOqROJxnZx5U/eJOp98CDABQSwECMwAUAAAICACpabVWHGCLYRQBAABIAQAAAQAAAAAAAAAAAAAAAAAAAAAAMVBLAQIzABQAAAgIAKlptVZqLQAt+AEAAF8DAAALAAAAAAAAAAAAAAAAADMBAABKc29uU3RvcmFnZVBLBQYAAAAAAgACAGgAAABUAwAAAAA=</Data>
+  <RequiresApproval>false</RequiresApproval>
+  <OverridingImport>false</OverridingImport>
+  <ModuleName>Decisions.OpenAI</ModuleName>
+  <ImportOrder>400</ImportOrder>
+  <ModifiedOn>2023-05-21T12:59:11.757</ModifiedOn>
+  <TagData />
+</ExportDescription>
