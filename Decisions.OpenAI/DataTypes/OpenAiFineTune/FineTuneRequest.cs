@@ -21,7 +21,7 @@ namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
             }
             catch (Exception e)
             {
-                throw new BusinessRuleException(e.Message);
+                throw new BusinessRuleException("There was a problem serializing request.", e);
             }
         }
     }

@@ -38,7 +38,7 @@ namespace Decisions.OpenAI.DataTypes.OpenAiChat
             }
             catch (Exception e)
             {
-                throw new BusinessRuleException(e.Message);
+                throw new BusinessRuleException("There was a problem deserializing response.", e);
             }
         }
     }
