@@ -53,11 +53,9 @@ namespace Decisions.OpenAI.Settings
             ModuleSettingsAccessor<OpenAISettings>.GetSettings();
             
             string? basePath = Path.GetDirectoryName(DecisionsFramework.ServiceLayer.Settings.SettingsFilePath);
-            LogConstants.SYSTEM.Error($"Base Path: {basePath}");
             if (basePath != null)
             {
                 string iconFilePathToWrite = Path.Combine(basePath, "images", "flow step images", "openai.svg");
-                LogConstants.SYSTEM.Error($"Icon Path: {iconFilePathToWrite}");
 
                 if (!File.Exists(iconFilePathToWrite))
                 {
