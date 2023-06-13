@@ -11,8 +11,14 @@ using DecisionsFramework.ServiceLayer.Utilities;
 
 namespace Decisions.OpenAI.Settings
 {
+    [Writable]
     public class OpenAISettings : AbstractModuleSettings, IInitializable
     {
+        public OpenAISettings()
+        {
+            this.EntityName = "OpenAI Settings";
+        }
+        
         [ORMField]
         private string apiKey;
         
