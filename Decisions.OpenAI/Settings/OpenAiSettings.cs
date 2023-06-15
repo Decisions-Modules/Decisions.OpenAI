@@ -14,22 +14,11 @@ namespace Decisions.OpenAI.Settings
     [Writable]
     public class OpenAISettings : AbstractModuleSettings, IInitializable
     {
-
-        [ORMField]
-        private string entityName;
-        
-        public override string EntityName
+        public OpenAISettings()
         {
-            get
-            {
-                return entityName;
-            }
-            set
-            {
-                entityName = "OpenAI Settings";
-            }
+            this.EntityName = "OpenAI Settings";
         }
-
+        
         [ORMField]
         private string apiKey;
         
