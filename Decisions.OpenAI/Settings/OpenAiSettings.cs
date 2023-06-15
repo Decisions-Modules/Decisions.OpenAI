@@ -16,7 +16,19 @@ namespace Decisions.OpenAI.Settings
     {
 
         [ORMField]
-        public override string EntityName => "OpenAI Settings";
+        private string entityName;
+        
+        public override string EntityName
+        {
+            get
+            {
+                return entityName;
+            }
+            set
+            {
+                entityName = "OpenAI Settings";
+            }
+        }
 
         [ORMField]
         private string apiKey;
