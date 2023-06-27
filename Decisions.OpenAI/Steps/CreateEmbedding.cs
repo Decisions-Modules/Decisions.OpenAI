@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiEmbedding;
+using Decisions.OpenAI.Settings;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -10,7 +11,7 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Embedding", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(null, "flow step images|openai.svg")]
+    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, $"{OpenAISettings.OPEN_AI_IMAGES_PATH}")]
     public class CreateEmbedding : ISyncStep, IDataConsumer
     {
         private const string OPENAI_EMBEDDING_RESPONSE = "OpenAiEmbedding";

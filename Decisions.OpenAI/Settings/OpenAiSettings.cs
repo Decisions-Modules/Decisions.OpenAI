@@ -12,8 +12,10 @@ using DecisionsFramework.ServiceLayer.Utilities;
 namespace Decisions.OpenAI.Settings
 {
     [Writable]
-    public class OpenAISettings : AbstractModuleSettings, IInitializable
+    public class OpenAISettings : AbstractModuleSettings
     {
+        internal const string OPEN_AI_IMAGES_PATH = "../../Content/CustomModuleImages/Decisions.OpenAI/openai.svg";
+
         public OpenAISettings()
         {
             this.EntityName = "OpenAI Settings";
@@ -46,45 +48,8 @@ namespace Decisions.OpenAI.Settings
             {
                 apiKey = value;
             }
-        }
-
-        public void Initialize()
-        {
-            ModuleSettingsAccessor<OpenAISettings>.GetSettings();
-            
-            string? basePath = Path.GetDirectoryName(DecisionsFramework.ServiceLayer.Settings.SettingsFilePath);
-            if (basePath != null)
-            {
-                string iconFilePathToWrite = Path.Combine(basePath, "images", "flow step images", "openai.svg");
-
-                if (!File.Exists(iconFilePathToWrite))
-                {
-                    byte[] icon = LoadBytesFromResource("Decisions.OpenAI.openai.svg");
-                    File.WriteAllBytes(iconFilePathToWrite, icon);
-                }
-            }
-        }
-        
-        private static byte[] LoadBytesFromResource(string resourceName)
-        {
-            var assembly = typeof(OpenAISettings).Assembly;
-            byte[] buffer = new byte[16 * 1024];
-
-            using (Stream? stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    int read;
-                    
-                    while (stream != null && (read = stream.Read(buffer, 0, buffer.Length)) > 0)
-                    {
-                        ms.Write(buffer, 0, read);
-                    }
-                    
-                    return ms.ToArray();
-                }
-            }
-        }
+        }       
+   
 
         public override BaseActionType[] GetActions(AbstractUserContext userContext, EntityActionType[] types)
         {

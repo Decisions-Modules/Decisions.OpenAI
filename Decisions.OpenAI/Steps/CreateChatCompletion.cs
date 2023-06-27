@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiChat;
+using Decisions.OpenAI.Settings;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -11,7 +12,7 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Chat Completion", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(null, "flow step images|openai.svg")]
+    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, $"{OpenAISettings.OPEN_AI_IMAGES_PATH}")]
     public class CreateChatCompletion : ISyncStep, IDataConsumer
     {
         private const string CONVERSATION = "Conversation";
