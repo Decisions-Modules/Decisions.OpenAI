@@ -27,10 +27,26 @@ namespace Decisions.OpenAI.DataTypes.OpenAiModeration
         
         [WritableValue]
         [JsonProperty("hate/threatening")]
-        public bool FlagThreatening;
+        public bool FlagHateThreat;
         
         [WritableValue]
         [JsonProperty("violence/graphic")]
         public bool FlagGraphic;
+        
+        [WritableValue]
+        [JsonProperty("harassment")]
+        public bool FlagHarassment;
+        
+        [WritableValue]
+        [JsonProperty("harassment/threatening")]
+        public bool FlagHarassmentThreat;
+        
+        [WritableValue]
+        [JsonProperty("self-harm/intent")]
+        public bool FlagSelfHarmIntent;
+        
+        [WritableValue]
+        [JsonProperty("self-harm/instruction")]
+        public bool FlagSelfHarmInstruct;
     }
 }
