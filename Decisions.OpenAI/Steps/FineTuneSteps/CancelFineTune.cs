@@ -11,7 +11,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
 {
     [Writable]
     [AutoRegisterStep("Cancel Fine Tune", "Integration/OpenAI/Fine-Tune")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, $"{OpenAISettings.OPEN_AI_IMAGES_PATH}")]
+    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CancelFineTune : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
