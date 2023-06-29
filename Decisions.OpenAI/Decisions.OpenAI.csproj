@@ -19,8 +19,8 @@
     <BuildDest>$(RootPath)obj</BuildDest>
   </PropertyGroup>
   <ItemGroup>
-<PackageReference Include="DecisionsSDK" Version="8.9.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="DecisionsSDK" Version="8.13.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

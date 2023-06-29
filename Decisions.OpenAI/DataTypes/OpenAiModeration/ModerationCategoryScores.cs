@@ -32,5 +32,21 @@ namespace Decisions.OpenAI.DataTypes.OpenAiModeration
         [WritableValue]
         [JsonProperty("violence/graphic")]
         public decimal FlagGraphic;
+        
+        [WritableValue]
+        [JsonProperty("harassment")]
+        public decimal FlagHarassment;
+        
+        [WritableValue]
+        [JsonProperty("harassment/threatening")]
+        public decimal FlagHarassmentThreat;
+        
+        [WritableValue]
+        [JsonProperty("self-harm/intent")]
+        public decimal FlagSelfHarmIntent;
+        
+        [WritableValue]
+        [JsonProperty("self-harm/instruction")]
+        public decimal FlagSelfHarmInstruct;
     }
 }
