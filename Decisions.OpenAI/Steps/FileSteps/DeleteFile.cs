@@ -12,7 +12,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
 {
     [Writable]
     [AutoRegisterStep("Delete File", "Integration/OpenAI/Files")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, $"{OpenAISettings.OPEN_AI_IMAGES_PATH}")]
+    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class DeleteFile : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";

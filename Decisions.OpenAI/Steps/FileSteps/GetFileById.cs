@@ -12,7 +12,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
 {
     [Writable]
     [AutoRegisterStep("Get File By Id", "Integration/OpenAI/Files")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, $"{OpenAISettings.OPEN_AI_IMAGES_PATH}")]
+    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class GetFileById : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
