@@ -36,7 +36,7 @@ namespace Decisions.OpenAI.Steps
             string extension = $"models/{model}";
 
             OpenAiModel modelResponse = OpenAiModel.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));
-
+            
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_GET_MODEL_RESPONSE, modelResponse);
             
