@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiEdit;
 using Decisions.OpenAI.Settings;
@@ -14,6 +15,10 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateEdit : ISyncStep, IDataConsumer
     {
+        private const string PATH_DONE = "Done";
+        
+        private const string INPUT = "Input";
+        private const string INSTRUCTION = "Instruction";
         private const string OPENAI_EDIT_RESPONSE = "OpenAiEdit";
         
         [WritableValue]
@@ -48,9 +53,16 @@ namespace Decisions.OpenAI.Steps
         
         public ResultData Run(StepStartData data)
         {
+            string? input = data[INPUT] as string;
+            string? instruction = data[INSTRUCTION] as string;
+            
+            if (string.IsNullOrEmpty(instruction))
+            {
+                throw new Exception($"{INSTRUCTION} cannot be null or empty.");
+            }
+            
             string extension = "edits";
-            string? input = data["input"] as string;
-            string? instruction = data["instruction"] as string;
+            
             EditRequest request = new EditRequest();
 
             request.Model = EditsModel;
@@ -71,7 +83,7 @@ namespace Decisions.OpenAI.Steps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData("Done", new DataDescription(typeof(EditResponse), OPENAI_EDIT_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(EditResponse), OPENAI_EDIT_RESPONSE))
                 };
             }
         }
@@ -84,8 +96,8 @@ namespace Decisions.OpenAI.Steps
                 
                 input.AddRange(new[]
                 {
-                    new DataDescription(typeof(string), "input"),
-                    new DataDescription(typeof(string), "instruction")
+                    new DataDescription(typeof(string), INPUT),
+                    new DataDescription(typeof(string), INSTRUCTION)
                 });
             
                 return input.ToArray();

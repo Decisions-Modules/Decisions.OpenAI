@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiModeration;
 using Decisions.OpenAI.Settings;
@@ -32,6 +33,11 @@ namespace Decisions.OpenAI.Steps
         public ResultData Run(StepStartData data)
         {
             string input = data[INPUT] as string;
+
+            if (string.IsNullOrEmpty(input))
+            {
+                throw new Exception($"{INPUT} cannot be null or empty.");
+            }
             
             string extension = "moderations";
             ModerationRequest request = new ModerationRequest();

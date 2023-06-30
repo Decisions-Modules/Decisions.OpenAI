@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiFineTune;
 using Decisions.OpenAI.Settings;
@@ -16,7 +17,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
     {
         private const string PATH_DONE = "Done";
         
-        private const string FINE_TUNE_ID = "fineTuneId";
+        private const string FINE_TUNE_ID = "Fine Tune ID";
         private const string OPENAI_FINE_TUNE_EVENTS_RESPONSE = "OpenAiFineTuneEvents";
         
         [WritableValue]
@@ -32,6 +33,11 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         public ResultData Run(StepStartData data)
         {
             string fineTuneId = data[FINE_TUNE_ID] as string;
+            
+            if (string.IsNullOrEmpty(fineTuneId))
+            {
+                throw new Exception($"{FINE_TUNE_ID} cannot be null or empty.");
+            }
             
             string extension = $"fine-tunes/{fineTuneId}/events";
             

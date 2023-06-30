@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiChat;
 using Decisions.OpenAI.Settings;
@@ -61,9 +62,16 @@ namespace Decisions.OpenAI.Steps
 
         public ResultData Run(StepStartData data)
         {
-            string extension = "chat/completions";
             string? message = data.Data[MESSAGE] as string;
             bool clearConversation = data.Data[CLEAR_CONVERSATION] is bool ? (bool)data.Data[CLEAR_CONVERSATION] : false;
+            
+            if (string.IsNullOrEmpty(message))
+            {
+                throw new Exception($"{MESSAGE} cannot be null or empty.");
+            }
+            
+            string extension = "chat/completions";
+            
             ChatRequest request;
             
             AbstractFlowTrackingData trackingData = FlowEngine.GetFlowTrackingData(data.FlowTrackingID);

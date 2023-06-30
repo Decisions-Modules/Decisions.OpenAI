@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiFineTune;
 using Decisions.OpenAI.Settings;
@@ -16,7 +17,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
     {
         private const string PATH_DONE = "Done";
         
-        private const string TRAINING_FILE_ID = "trainingFileId";
+        private const string TRAINING_FILE_ID = "Training File ID";
         private const string OPENAI_FINE_TUNE_RESPONSE = "OpenAiCreateFineTune";
         
         [WritableValue]
@@ -33,7 +34,13 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         {
             string trainingFileId = data[TRAINING_FILE_ID] as string;
             
+            if (string.IsNullOrEmpty(trainingFileId))
+            {
+                throw new Exception($"{TRAINING_FILE_ID} cannot be null or empty.");
+            }
+            
             string extension = "fine-tunes";
+            
             FineTuneRequest request = new FineTuneRequest();
             request.TrainingFile = trainingFileId;
             

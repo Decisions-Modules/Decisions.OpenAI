@@ -63,12 +63,29 @@ namespace Decisions.OpenAI.Steps
         
         public ResultData Run(StepStartData data)
         {
-            string extension = "completions";
             string prompt = data[PROMPT] as string;
             int maxTokens = data[MAX_TOKENS] is int ? (int)data[MAX_TOKENS] : 0;
             double temperature = data[TEMPERATURE] is double ? (double)data[TEMPERATURE] : 0;
             int n = data[NUMBER_OF_COMPLETIONS] is int ? (int)data[NUMBER_OF_COMPLETIONS] : 0;
             string? modelNameOverride = data[MODEL_NAME_OVERRIDE] as string;
+            
+            if (string.IsNullOrEmpty(prompt))
+            {
+                throw new Exception($"{PROMPT} cannot be null or empty.");
+            }
+            
+            if (maxTokens == null || maxTokens == 0)
+            {
+                throw new Exception($"{MAX_TOKENS} cannot be null or 0.");
+            }
+            
+            if (n == null || n == 0)
+            {
+                throw new Exception($"{NUMBER_OF_COMPLETIONS} cannot be null or 0.");
+            }
+            
+            string extension = "completions";
+            
             CompletionRequest request = new CompletionRequest();
 
             request.Model = CompletionModel;

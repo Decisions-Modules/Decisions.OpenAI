@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes;
 using Decisions.OpenAI.Settings;
@@ -17,7 +18,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
     {
         private const string PATH_DONE = "Done";
         
-        private const string FILE_ID = "FileId";
+        private const string FILE_ID = "File ID";
         private const string OPENAI_DELETE_FILE_RESPONSE = "OpenAiDeleteFile";
         
         [WritableValue]
@@ -33,6 +34,11 @@ namespace Decisions.OpenAI.Steps.FileSteps
         public ResultData Run(StepStartData data)
         {
             string fileId = data[FILE_ID] as string;
+            
+            if (string.IsNullOrEmpty(fileId))
+            {
+                throw new Exception($"{FILE_ID} cannot be null or empty.");
+            }
             
             string extension = $"files/{fileId}";
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes;
 using Decisions.OpenAI.Settings;
@@ -16,7 +17,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
     {
         private const string PATH_DONE = "Done";
         
-        private const string FINE_TUNED_MODEL = "fineTunedModel";
+        private const string FINE_TUNED_MODEL = "Fine Tuned Model";
         private const string OPENAI_DELETE_FINE_TUNE_RESPONSE = "OpenAiDeleteFineTune";
         
         [WritableValue]
@@ -32,6 +33,11 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         public ResultData Run(StepStartData data)
         {
             string fineTunedModel = data[FINE_TUNED_MODEL] as string;
+            
+            if (string.IsNullOrEmpty(fineTunedModel))
+            {
+                throw new Exception($"{FINE_TUNED_MODEL} cannot be null or empty.");
+            }
             
             string extension = $"models/{fineTunedModel}";
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiEmbedding;
 using Decisions.OpenAI.Settings;
@@ -14,6 +15,9 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateEmbedding : ISyncStep, IDataConsumer
     {
+        private const string PATH_DONE = "Done";
+        
+        private const string INPUT = "Input";
         private const string OPENAI_EMBEDDING_RESPONSE = "OpenAiEmbedding";
         
         [WritableValue]
@@ -48,7 +52,12 @@ namespace Decisions.OpenAI.Steps
 
         public ResultData Run(StepStartData data)
         {
-            string[] inputs = data["input"] as string[];
+            string[] inputs = data[INPUT] as string[];
+            
+            if (inputs == null || inputs.Length == 0)
+            {
+                throw new Exception($"{INPUT} cannot be null or empty.");
+            }
             
             string extension = "embeddings";
             EmbeddingRequest request = new EmbeddingRequest();
@@ -70,7 +79,7 @@ namespace Decisions.OpenAI.Steps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData("Done", new DataDescription(typeof(EmbeddingResponse), OPENAI_EMBEDDING_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(EmbeddingResponse), OPENAI_EMBEDDING_RESPONSE))
                 };
             }
         }
