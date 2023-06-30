@@ -7,19 +7,19 @@
   <ShortTypeName>Folder</ShortTypeName>
   <Id>01H0X4YSXKYKKBN0539SC23R0E</Id>
   <ExportedBy>admin@decisions.com</ExportedBy>
-  <ExportedOn>2023-06-07T11:15:22.0929758-04:00</ExportedOn>
-  <PlatformVersion>8.13.0.71992</PlatformVersion>
+  <ExportedOn>2023-06-30T11:17:07.594981-04:00</ExportedOn>
+  <PlatformVersion>8.13.0.72094</PlatformVersion>
   <DependsOn />
   <DependsOnAssemblies />
   <StructureImport>false</StructureImport>
   <DependsOnStructures>false</DependsOnStructures>
-  <Size>690</Size>
-  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgA61nHVoHf+wAvAgAAPAQAAAsAAABKc29uU3RvcmFnZZRS227iMBD9lSjPETW3QitVWghhS6EEkYgtTys3GYpVYyPbAUVV/33HxEnbvTysH+LMmTOXM543n/i3b/7Gfn6m8SoeP0Rh6t+SAM3tKlqOHiP/1p9AxjSTQk8VPcBZqtdWAurEMljQElRt6NZU8hzt6gq8P+MCbwPKQnfDVrvbIi0SeGHBTaHgTkBhFOWBtyqeOcvmUKbyFcSdKDj3A393STqbYD+kfU+eetvkab6dz8dL0u/eJGGnuyZRwxvDnp6YVGl5hP9R4H5CaiiXL7+Z0y+psZbey/NMpApsDWOB4vkRRNFQbOUdRYHoy6gYw1pKg+iuadQ2uMSeEKzSN55YWQvVIsLEHhQzK1AHpi9CXEEB2jDxsoATcIR6NhrntaJmj2ZSagOHq9HxiAOlxsZd/UDxOy7PnhN1FR9BjGa2iK74rg+nCLICK5cVOMtt1m2SRo/eNF5MonUV94Xk9O2pTornCtIOy/aM5wrEPT1BHeRcVJSh807kUpq/UGzGI77kjkG+YXCuYZbnIOo0+YEJpnGTjFSWFAtex4MwH0rsIiXRejMLIy8cpaNF/P1DUsV079IMKFNADeSxmOCFjuvusEPaw8HwutPrE3uQdJD5pcHPnO6gfdPpkjbpDS4cl2hcNtP8FHhBLzK+5fXatjJ5sOIUDvAEea3Vma5Uv98ZDgY3HdIcy+E8pS8aKRQpCEyAg2lSOCsW/4pnOsqZCeWxGuJ74NsdIO/vvwQQYABQSwECMwAUAAAICADrWcdWgd/7AC8CAAA8BAAACwAAAAAAAAAAAAAAAAAAAAAASnNvblN0b3JhZ2VQSwUGAAAAAAEAAQA5AAAAWAIAAAAA</Data>
+  <Size>684</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgAI1reVi9W/wcpAgAANAQAAAsAAABKc29uU3RvcmFnZZRSTW/iMBD9K1HOWeqG0NJKPUAIWwoliERsOa3cZChWjY1sBxRV/e87JiZt9+OwPiR5b958vHHefOLfvvkr+/iZp4t0+JDEuX9LAoTrRTIfPCb+rT+CgmkmhR4ruoOjVK+dDNSBFTCjNagz0J2x5CXi5hV4f+YF3gqUpe76nctuh3RI4MUVN5WCOwGVUZQH3qJ65qyYQp3LVxB3ouLcD/zNqehkhPOQy3vyFK2zp+l6Oh3OSa97k8Vhd0mSVjeELT0wqfJ6D//jwH3E1FAuX36D4y+lsZfeyuNE5ApsD2OJ6vkRRNVKbOcNRYMYK6gYwlJKg+ymHdQOOMeZkGzKt5FUWYRukWFiC4qZBagd0ycjrqEAbZh4mcEBOFKRzcZ9LajZIsxqbWB3MdjvcaHU2LyLH2h+w+XRc6Yu0j2IwcQ20Y3ezeEcQVFh57ohJ6Wtus7y5NEbp7NRsmzyvoicvy3VWfXcUNpxxZbxUoG4pwc4J7kQFXXsoiM5l+YvEltxjze5YVCuGBzPNCtLEOcy5Y4JpvFPMlJZUSr4OR+E+XBif6QsWa4mceLFg3wwS79/WGqU7l7aBRUKqIEyFSN8YeCq2w/JZf+6fxVGPWIPinayPA34SRNG3d5NFEUkChuNKzSs221+Sjyx3z6ONaVwcQcozx4ddC16vbB/fX0TkvZYDec5fdEooShBYgQcTFvCoVT8K5/ppGQmlvtmee+Bb++evL//EkCAAQBQSwECMwAUAAAICAAjWt5WL1b/BykCAAA0BAAACwAAAAAAAAAAAAAAAAAAAAAASnNvblN0b3JhZ2VQSwUGAAAAAAEAAQA5AAAAUgIAAAAA</Data>
   <RequiresApproval>false</RequiresApproval>
   <OverridingImport>false</OverridingImport>
   <ModuleName>Decisions.OpenAI</ModuleName>
   <ImportOrder>104</ImportOrder>
-  <ModifiedOn>2023-05-22T17:05:23.01047</ModifiedOn>
+  <ModifiedOn>2023-06-15T14:25:44.4042</ModifiedOn>
   <BehaviorTypeName>DecisionsFramework.ServiceLayer.Services.ServiceCatalog.ServiceCatalogFolderBehavior</BehaviorTypeName>
   <AllTagsData />
   <TagData />

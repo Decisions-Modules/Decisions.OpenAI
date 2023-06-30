@@ -7,19 +7,19 @@
   <ShortTypeName>Designer Folder</ShortTypeName>
   <Id>01GZCG0NHDM7RK2KHKPY5JMCAB</Id>
   <ExportedBy>admin@decisions.com</ExportedBy>
-  <ExportedOn>2023-06-07T11:15:22.0201363-04:00</ExportedOn>
-  <PlatformVersion>8.13.0.71992</PlatformVersion>
+  <ExportedOn>2023-06-30T11:17:07.596661-04:00</ExportedOn>
+  <PlatformVersion>8.13.0.72094</PlatformVersion>
   <DependsOn />
   <DependsOnAssemblies />
   <StructureImport>false</StructureImport>
   <DependsOnStructures>false</DependsOnStructures>
-  <Size>757</Size>
-  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgA61nHVpFW98lyAgAAigQAAAsAAABKc29uU3RvcmFnZYRT72/aMBD9V6J86ZcMAi2FslINEloohUQlqtSp0mSSg3h1bGQ7dFnV/33n/KCb1mn5gHXP797dvTOvtmsPX+0H8/MtCsJgcjv1InvoOhg+htPVeDm1h7YPMVVUcHUtSQYvQj631iAPNIY7UoBsAtW6FizBuDoc6+88x3oAaaDRoNU5bbkt17G8nOlcwohDriVhjhXmG0bjBRSReAY+4jljtmNvS9G5j/24nZuv3o27mvnL/v2iu5gtwsfe7dIbT468CaTkQIWMij18PIEPiu54fYAMpfgOsa5aRxmVipc5jySYdG2AfLMEnjfCpeiWYO94FxM+gXshNKLbYw+m9grLldSqinXUryiBNBFOhAjlKUiqQ5AZVWWzdWUOSlO+u4MDMITOTDZ6EhKdYrgulIas3VRQbY9owsSuHeyBj+dGWFWcunY9DsQ5VisqcJ78z1YU+SOjlkmJWuebClL19HFKWSKBz8gBmqT6ivDCq299sRL6A4pR3OO6thSSBwovDUyTBHgjk2SUU4XPRQtpSAFnTT5w/T6WeS1esAyD1XQVra3r4M6f3h9J9XKORlUoOhlLute4Aby8THXGri5TIMnVZbs6NiIpLKULBqMnXCTXn7Yko6wYWidjSQk7+WyVqKI/YWh1uvsfTzYmmzSjYQSNTRKIhiTgPh5Y6fx00Bn0er3uhXved82HpEwkpRPvnK572u9cdLuDzpnb6bnvQhPjwPpxHU2XvyWWaOnXl6T5E7RikRkXJW7qAEljah3WpbCRQb9/0XWPn+EwFpGdQgpBCgI+MNBHiToK+L/yqZomVHtiX23rzbHNy3Pf3n4JIMAAUEsBAjMAFAAACAgA61nHVpFW98lyAgAAigQAAAsAAAAAAAAAAAAAAAAAAAAAAEpzb25TdG9yYWdlUEsFBgAAAAABAAEAOQAAAJsCAAAAAA==</Data>
+  <Size>748</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgAI1reVi5WAmZpAgAAggQAAAsAAABKc29uU3RvcmFnZYRSXW/aMBT9K1Fe+kIhQCiUlUqQpC2lkKhElTpVmkxyIV6NjWyHLqv633dNEti0TstDrHt8zrlffrcde/huP5nftziMwsl94MX20Glg+BwFi/E8sIe2DwlVVHB1I8kW3oR8bS5B7mkCD6QAWQeqeSNYinF5NKy/dQ3rCaSBRoNmu9t0mk7D8nKmcwkjDrmWhDWsKF8xmsygiMUr8BHPGbMb9vpgOvWxHqd9+9W7dRZ3/rz/OOvM7mbRc+9+7o0nR94EMrKnQsbFDj7vwAdFN7w6QEZSfIdEl6WjjcrE25THEoxcGyBfzYHntfHBdE2wdrxLCJ/AoxAa0fWxBpN7gekO1DKLdfQvKaE0EXaECOUZSKojkFuqDsVWmTkoTfnmAfbAEHKNGmcSEZ1huCyUhm2rzqBaHtGEiU0r3AEfT42xKjlV7qodSHLMVpTgNP3fWNHkD0VlkxG1zFclpKruk4yyVAK/I3uoRdUV4YVX3fpiIfQnFOO4w3WtKaRPFN5qmKYp8Nom3VJOFT4XLaQhhZzVeuD61JZ5LV44j8JFsIiX1k344AePR1K1nOOgShQnmUi607gBvLzK9JZdX2VA0uurVnmsRFpYShcMRi+4SK7P12RLWTG0zsaSEnb2xTqgiv6EodXu7H682Cg2MuNhDM2YJBANach9PDDTRXfQHvR6vc6lc9F3zIekrUgPkzhxOh2327t03a7bdl3XORlNzASWz8s4mP8mPKDnp89MT+KG9pDWw6zCKgUWMOj3LzvO8TMcxmKyUUghSEHABwb6aFFFIf+XnqogpdoTu3JLHw3bvDjn4+OXAAMAUEsBAjMAFAAACAgAI1reVi5WAmZpAgAAggQAAAsAAAAAAAAAAAAAAAAAAAAAAEpzb25TdG9yYWdlUEsFBgAAAAABAAEAOQAAAJICAAAAAA==</Data>
   <RequiresApproval>false</RequiresApproval>
   <OverridingImport>false</OverridingImport>
   <ModuleName>Decisions.OpenAI</ModuleName>
   <ImportOrder>104</ImportOrder>
-  <ModifiedOn>2023-05-22T17:05:22.814015</ModifiedOn>
+  <ModifiedOn>2023-06-15T14:25:44.341444</ModifiedOn>
   <BehaviorTypeName>DecisionsFramework.Design.DesignerProjectFolder</BehaviorTypeName>
   <AllTagsData />
   <TagData />

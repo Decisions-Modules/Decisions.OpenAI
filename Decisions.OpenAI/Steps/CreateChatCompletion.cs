@@ -93,7 +93,7 @@ namespace Decisions.OpenAI.Steps
             
             foreach (ChatMessage chat in request.Messages)
             {
-                conversation += $"{chat.Role}: {chat.Content}\n";
+                conversation += $"{chat.Role[0].ToString().ToUpper()}{chat.Role.Substring(1)}:\n{chat.Content}\n\n";
             }
 
             data[CHAT_COMPLETION_ID] = request.JsonSerialize();
