@@ -11,14 +11,14 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Get Model", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class GetModel : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-        
+
         private const string MODEL = "Model";
         private const string OPENAI_GET_MODEL_RESPONSE = "OpenAiGetModel";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -32,18 +32,19 @@ namespace Decisions.OpenAI.Steps
         public ResultData Run(StepStartData data)
         {
             string model = data[MODEL] as string;
-            
+
             string extension = $"models/{model}";
 
             OpenAiModel modelResponse = OpenAiModel.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));
             
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_GET_MODEL_RESPONSE, modelResponse);
-            
+
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -62,7 +63,7 @@ namespace Decisions.OpenAI.Steps
                 {
                     new DataDescription(typeof(string), MODEL)
                 });
-            
+
                 return input.ToArray();
             }
         }

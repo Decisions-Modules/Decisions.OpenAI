@@ -12,7 +12,7 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Chat Completion", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, "flow step images|openai.svg")]
     public class CreateChatCompletion : ISyncStep, IDataConsumer
     {
         private const string CONVERSATION = "Conversation";
