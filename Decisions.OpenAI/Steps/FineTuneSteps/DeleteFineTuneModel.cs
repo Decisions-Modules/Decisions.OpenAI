@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -11,12 +12,12 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
 {
     [Writable]
     [AutoRegisterStep("Delete Fine Tune", "Integration/OpenAI/Fine-Tune")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+      [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class DeleteFineTuneModel : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
         
-        private const string FINE_TUNED_MODEL = "fineTunedModel";
+        private const string FINE_TUNED_MODEL = "Fine Tuned Model";
         private const string OPENAI_DELETE_FINE_TUNE_RESPONSE = "OpenAiDeleteFineTune";
         
         [WritableValue]
@@ -32,6 +33,11 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         public ResultData Run(StepStartData data)
         {
             string fineTunedModel = data[FINE_TUNED_MODEL] as string;
+            
+            if (string.IsNullOrEmpty(fineTunedModel))
+            {
+                throw new BusinessRuleException($"{FINE_TUNED_MODEL} cannot be null or empty.");
+            }
             
             string extension = $"models/{fineTunedModel}";
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiCompletion;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -12,18 +13,19 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Completion", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateCompletion : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "completions";
         private const string PATH_DONE = "Done";
-        
+
         private const string PROMPT = "Prompt";
         private const string MAX_TOKENS = "Max Tokens";
         private const string TEMPERATURE = "Temperature";
         private const string NUMBER_OF_COMPLETIONS = "Number Of Completions";
         private const string MODEL_NAME_OVERRIDE = "Model Name Override";
         private const string OPENAI_COMPLETION_RESPONSE = "OpenAiCompletion";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -33,7 +35,7 @@ namespace Decisions.OpenAI.Steps
             get => apiKeyOverride;
             set => apiKeyOverride = value;
         }
-        
+
         [WritableValue]
         private string completionModel = "text-ada-001";
 
@@ -44,7 +46,7 @@ namespace Decisions.OpenAI.Steps
             get => completionModel;
             set => completionModel = value;
         }
-        
+
         [PropertyHidden(true)]
         public string[] CompletionModels
         {
@@ -60,15 +62,30 @@ namespace Decisions.OpenAI.Steps
                 };
             }
         }
-        
+
         public ResultData Run(StepStartData data)
         {
-            string extension = "completions";
             string prompt = data[PROMPT] as string;
             int maxTokens = data[MAX_TOKENS] is int ? (int)data[MAX_TOKENS] : 0;
             double temperature = data[TEMPERATURE] is double ? (double)data[TEMPERATURE] : 0;
             int n = data[NUMBER_OF_COMPLETIONS] is int ? (int)data[NUMBER_OF_COMPLETIONS] : 0;
             string? modelNameOverride = data[MODEL_NAME_OVERRIDE] as string;
+            
+            if (string.IsNullOrEmpty(prompt))
+            {
+                throw new BusinessRuleException($"{PROMPT} cannot be null or empty.");
+            }
+            
+            if (maxTokens == null || maxTokens == 0)
+            {
+                throw new BusinessRuleException($"{MAX_TOKENS} cannot be null or 0.");
+            }
+            
+            if (n == null || n == 0)
+            {
+                throw new BusinessRuleException($"{NUMBER_OF_COMPLETIONS} cannot be null or 0.");
+            }
+
             CompletionRequest request = new CompletionRequest();
 
             request.Model = CompletionModel;
@@ -99,22 +116,23 @@ namespace Decisions.OpenAI.Steps
             {
                 request.N = 128;
             }
-            
+
             if (!string.IsNullOrEmpty(modelNameOverride))
             {
                 request.Model = modelNameOverride;
             }
 
             string messageRequest = request.JsonSerialize();
-            CompletionResponse completionResponse = CompletionResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
-            
+            CompletionResponse completionResponse = CompletionResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, EXTENSION, ApiKeyOverride));
+
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_COMPLETION_RESPONSE, completionResponse);
 
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -137,7 +155,7 @@ namespace Decisions.OpenAI.Steps
                     new DataDescription(typeof(int), NUMBER_OF_COMPLETIONS),
                     new DataDescription(typeof(string), MODEL_NAME_OVERRIDE)
                 });
-            
+
                 return input.ToArray();
             }
         }

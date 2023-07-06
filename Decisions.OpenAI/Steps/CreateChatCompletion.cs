@@ -13,9 +13,10 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Chat Completion", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, "flow step images|openai.svg")]
     public class CreateChatCompletion : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "chat/completions";
         private const string CONVERSATION = "Conversation";
         private const string PATH_DONE = "Done";
 
@@ -62,9 +63,14 @@ namespace Decisions.OpenAI.Steps
 
         public ResultData Run(StepStartData data)
         {
-            string extension = "chat/completions";
             string? message = data.Data[MESSAGE] as string;
             bool clearConversation = data.Data[CLEAR_CONVERSATION] is bool ? (bool)data.Data[CLEAR_CONVERSATION] : false;
+            
+            if (string.IsNullOrEmpty(message))
+            {
+                throw new BusinessRuleException($"{MESSAGE} cannot be null or empty.");
+            }
+
             ChatRequest request;
             
             AbstractFlowTrackingData trackingData = FlowEngine.GetFlowTrackingData(data.FlowTrackingID);
