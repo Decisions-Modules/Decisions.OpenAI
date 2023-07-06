@@ -90,16 +90,16 @@ namespace Decisions.OpenAI.Steps
 
             int chatIndex = chatResponse.Choices.Count - 1;
 
-            if (!string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Role) &&
-                !string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Content))
-            {
-                request.Messages.Add(chatResponse.Choices[chatIndex].Message);
-            }
-            else
+            if (chatResponse == null || chatResponse.Choices == null ||
+                chatResponse.Choices[chatIndex] == null || chatResponse.Choices[chatIndex].Message == null ||
+                string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Role) ||
+                string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Content))
             {
                 throw new BusinessRuleException(
                     "OpenAI failed to return a chat completion. Please check the settings and try again.");
             }
+            
+            request.Messages.Add(chatResponse.Choices[chatIndex].Message);
 
             string conversation = null;
             
