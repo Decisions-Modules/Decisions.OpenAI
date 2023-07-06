@@ -15,6 +15,7 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateModeration : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "moderations";
         private const string PATH_DONE = "Done";
 
         private const string INPUT = "Input";
@@ -39,13 +40,12 @@ namespace Decisions.OpenAI.Steps
                 throw new Exception($"{INPUT} cannot be null or empty.");
             }
             
-            string extension = "moderations";
             ModerationRequest request = new ModerationRequest();
 
             request.Input = input;
             string messageRequest = request.JsonSerialize();
 
-            ModerationResponse moderationResponse = ModerationResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
+            ModerationResponse moderationResponse = ModerationResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, EXTENSION, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_MODERATION_RESPONSE, moderationResponse);

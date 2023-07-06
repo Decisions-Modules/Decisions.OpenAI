@@ -14,6 +14,7 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class ListModels : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "models";
         private const string PATH_DONE = "Done";
 
         private const string OPENAI_LIST_MODELS_RESPONSE = "OpenAiListModels";
@@ -30,9 +31,7 @@ namespace Decisions.OpenAI.Steps
 
         public ResultData Run(StepStartData data)
         {
-            string extension = "models";
-
-            ModelList modelListResponse = ModelList.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));
+            ModelList modelListResponse = ModelList.JsonDeserialize(OpenAiRest.OpenAiGet(EXTENSION, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_LIST_MODELS_RESPONSE, modelListResponse);

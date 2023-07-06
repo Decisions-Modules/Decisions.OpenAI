@@ -16,6 +16,7 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(null, "flow step images|openai.svg")]
     public class CreateChatCompletion : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "chat/completions";
         private const string CONVERSATION = "Conversation";
         private const string PATH_DONE = "Done";
 
@@ -69,9 +70,7 @@ namespace Decisions.OpenAI.Steps
             {
                 throw new Exception($"{MESSAGE} cannot be null or empty.");
             }
-            
-            string extension = "chat/completions";
-            
+
             ChatRequest request;
             
             AbstractFlowTrackingData trackingData = FlowEngine.GetFlowTrackingData(data.FlowTrackingID);
@@ -93,7 +92,7 @@ namespace Decisions.OpenAI.Steps
 
             string messageRequest = request.JsonSerialize();
             
-            ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
+            ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, EXTENSION, ApiKeyOverride));
             
             request.Messages.Add(chatResponse.Choices[chatResponse.Choices.Count-1].Message);
 

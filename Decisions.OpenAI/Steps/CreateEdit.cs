@@ -15,6 +15,7 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateEdit : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "edits";
         private const string PATH_DONE = "Done";
         
         private const string INPUT = "Input";
@@ -60,9 +61,7 @@ namespace Decisions.OpenAI.Steps
             {
                 throw new Exception($"{INSTRUCTION} cannot be null or empty.");
             }
-            
-            string extension = "edits";
-            
+
             EditRequest request = new EditRequest();
 
             request.Model = EditsModel;
@@ -70,7 +69,7 @@ namespace Decisions.OpenAI.Steps
             request.Instruction = instruction;
 
             string editRequest = request.JsonSerialize();
-            EditResponse editResponse = EditResponse.JsonDeserialize(OpenAiRest.OpenAiPost(editRequest, extension, ApiKeyOverride));
+            EditResponse editResponse = EditResponse.JsonDeserialize(OpenAiRest.OpenAiPost(editRequest, EXTENSION, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_EDIT_RESPONSE, editResponse);

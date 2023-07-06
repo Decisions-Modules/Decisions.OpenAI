@@ -15,6 +15,7 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateCompletion : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "completions";
         private const string PATH_DONE = "Done";
 
         private const string PROMPT = "Prompt";
@@ -83,9 +84,7 @@ namespace Decisions.OpenAI.Steps
             {
                 throw new Exception($"{NUMBER_OF_COMPLETIONS} cannot be null or 0.");
             }
-            
-            string extension = "completions";
-            
+
             CompletionRequest request = new CompletionRequest();
 
             request.Model = CompletionModel;
@@ -123,7 +122,7 @@ namespace Decisions.OpenAI.Steps
             }
 
             string messageRequest = request.JsonSerialize();
-            CompletionResponse completionResponse = CompletionResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
+            CompletionResponse completionResponse = CompletionResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, EXTENSION, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_COMPLETION_RESPONSE, completionResponse);

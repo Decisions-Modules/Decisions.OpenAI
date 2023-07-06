@@ -15,6 +15,7 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateEmbedding : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "embeddings";
         private const string PATH_DONE = "Done";
         
         private const string INPUT = "Input";
@@ -59,14 +60,13 @@ namespace Decisions.OpenAI.Steps
                 throw new Exception($"{INPUT} cannot be null or empty.");
             }
             
-            string extension = "embeddings";
             EmbeddingRequest request = new EmbeddingRequest();
 
             request.Input = inputs;
             request.Model = EmbeddingsModel;
             string embeddingRequest = request.JsonSerialize();
 
-            EmbeddingResponse embeddingResponse = EmbeddingResponse.JsonDeserialize(OpenAiRest.OpenAiPost(embeddingRequest, extension, ApiKeyOverride));
+            EmbeddingResponse embeddingResponse = EmbeddingResponse.JsonDeserialize(OpenAiRest.OpenAiPost(embeddingRequest, EXTENSION, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_EMBEDDING_RESPONSE, embeddingResponse);
