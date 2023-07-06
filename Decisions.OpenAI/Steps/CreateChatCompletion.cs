@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiChat;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -86,8 +87,19 @@ namespace Decisions.OpenAI.Steps
             string messageRequest = request.JsonSerialize();
             
             ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
-            
-            request.Messages.Add(chatResponse.Choices[chatResponse.Choices.Count-1].Message);
+
+            int chatIndex = chatResponse.Choices.Count - 1;
+
+            if (!string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Role) &&
+                !string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Content))
+            {
+                request.Messages.Add(chatResponse.Choices[chatIndex].Message);
+            }
+            else
+            {
+                throw new BusinessRuleException(
+                    "OpenAI failed to return a chat completion. Please check the settings and try again.");
+            }
 
             string conversation = null;
             
