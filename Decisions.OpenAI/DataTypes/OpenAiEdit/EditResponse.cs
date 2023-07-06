@@ -10,10 +10,6 @@ namespace Decisions.OpenAI.DataTypes.OpenAiEdit
     public class EditResponse
     {
         [WritableValue]
-        [JsonProperty("id")]
-        public string Id { get; set; }
-        
-        [WritableValue]
         [JsonProperty("object")]
         public string Object { get; set; }
         
