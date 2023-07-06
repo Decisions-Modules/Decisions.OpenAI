@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -37,7 +37,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
             
             if (string.IsNullOrEmpty(fileId))
             {
-                throw new Exception($"{FILE_ID} cannot be null or empty.");
+                throw new BusinessRuleException($"{FILE_ID} cannot be null or empty.");
             }
             
             string extension = $"files/{fileId}";

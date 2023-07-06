@@ -50,7 +50,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
             
             if (file == null)
             {
-                throw new Exception($"{FILE} cannot be null or empty.");
+                throw new BusinessRuleException($"{FILE} cannot be null or empty.");
             }
             
             string url = "https://api.openai.com/v1/files";

@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiEmbedding;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -57,7 +57,7 @@ namespace Decisions.OpenAI.Steps
             
             if (inputs == null || inputs.Length == 0)
             {
-                throw new Exception($"{INPUT} cannot be null or empty.");
+                throw new BusinessRuleException($"{INPUT} cannot be null or empty.");
             }
             
             EmbeddingRequest request = new EmbeddingRequest();

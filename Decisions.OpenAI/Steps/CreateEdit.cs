@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiEdit;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -59,7 +59,7 @@ namespace Decisions.OpenAI.Steps
             
             if (string.IsNullOrEmpty(instruction))
             {
-                throw new Exception($"{INSTRUCTION} cannot be null or empty.");
+                throw new BusinessRuleException($"{INSTRUCTION} cannot be null or empty.");
             }
 
             EditRequest request = new EditRequest();

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiCompletion;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -72,17 +73,17 @@ namespace Decisions.OpenAI.Steps
             
             if (string.IsNullOrEmpty(prompt))
             {
-                throw new Exception($"{PROMPT} cannot be null or empty.");
+                throw new BusinessRuleException($"{PROMPT} cannot be null or empty.");
             }
             
             if (maxTokens == null || maxTokens == 0)
             {
-                throw new Exception($"{MAX_TOKENS} cannot be null or 0.");
+                throw new BusinessRuleException($"{MAX_TOKENS} cannot be null or 0.");
             }
             
             if (n == null || n == 0)
             {
-                throw new Exception($"{NUMBER_OF_COMPLETIONS} cannot be null or 0.");
+                throw new BusinessRuleException($"{NUMBER_OF_COMPLETIONS} cannot be null or 0.");
             }
 
             CompletionRequest request = new CompletionRequest();

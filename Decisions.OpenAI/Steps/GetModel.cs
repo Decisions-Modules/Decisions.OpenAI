@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiModel;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -36,7 +36,7 @@ namespace Decisions.OpenAI.Steps
             
             if (string.IsNullOrEmpty(model))
             {
-                throw new Exception($"{MODEL} cannot be null or empty.");
+                throw new BusinessRuleException($"{MODEL} cannot be null or empty.");
             }
             
             string extension = $"models/{model}";

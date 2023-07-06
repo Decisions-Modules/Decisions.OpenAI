@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiFineTune;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -37,7 +37,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             
             if (string.IsNullOrEmpty(trainingFileId))
             {
-                throw new Exception($"{TRAINING_FILE_ID} cannot be null or empty.");
+                throw new BusinessRuleException($"{TRAINING_FILE_ID} cannot be null or empty.");
             }
 
             FineTuneRequest request = new FineTuneRequest();

@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiModeration;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -37,7 +37,7 @@ namespace Decisions.OpenAI.Steps
 
             if (string.IsNullOrEmpty(input))
             {
-                throw new Exception($"{INPUT} cannot be null or empty.");
+                throw new BusinessRuleException($"{INPUT} cannot be null or empty.");
             }
             
             ModerationRequest request = new ModerationRequest();
