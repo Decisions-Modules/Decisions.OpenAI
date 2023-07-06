@@ -14,7 +14,7 @@ namespace Decisions.OpenAI.Settings
     [Writable]
     public class OpenAISettings : AbstractModuleSettings
     {
-        internal const string OPEN_AI_IMAGES_PATH = "../../Content/CustomModuleImages/Decisions.OpenAI/openai.svg";
+        internal const string OPEN_AI_IMAGES_PATH = "../wwwroot/Content/CustomModuleImages/Decisions.OpenAI/|openai.svg";
 
         public OpenAISettings()
         {

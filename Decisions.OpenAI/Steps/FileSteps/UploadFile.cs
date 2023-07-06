@@ -20,14 +20,14 @@ namespace Decisions.OpenAI.Steps.FileSteps
 {
     [Writable]
     [AutoRegisterStep("Upload File", "Integration/OpenAI/Files")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class UploadFile : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-        
+
         private const string FILE = "File";
         private const string OPENAI_UPLOAD_FILE_RESPONSE = "OpenAiUploadFile";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -37,7 +37,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
             get => apiKeyOverride;
             set => apiKeyOverride = value;
         }
-        
+
         private static string GetAPIKey()
         {
             OpenAISettings settings = ModuleSettingsAccessor<OpenAISettings>.GetSettings();
@@ -70,37 +70,40 @@ namespace Decisions.OpenAI.Steps.FileSteps
             {
                 throw new BusinessRuleException("An API key must be declared in the settings");
             }
-            
+
             client.Headers.Add("Content-Type", $"multipart/form-data; boundary={multiPartBoundary}");
 
-            MultiPartFormDataPart purposePart = new MultiPartFormDataPart{
+            MultiPartFormDataPart purposePart = new MultiPartFormDataPart
+            {
                 PartType = MultiPartFormDataPartType.Value,
                 Name = "purpose",
                 PartValue = "fine-tune"
             };
-            
-            MultiPartFormDataPart filePart = new MultiPartFormDataPart{
+
+            MultiPartFormDataPart filePart = new MultiPartFormDataPart
+            {
                 PartType = MultiPartFormDataPartType.File,
                 Name = "file",
                 File = file
             };
-            
+
             MultiPartFormDataPart[] formDataParts = { purposePart, filePart };
 
             byte[] requestBody = MultiPartFormDataPart.GetRequestBodyFromParts(formDataParts, multiPartBoundary);
             byte[] resp = client.UploadData(url, "POST", requestBody);
 
-            Task<string> respTask = Task.FromResult(Encoding.UTF8.GetString(resp)); 
-            
+            Task<string> respTask = Task.FromResult(Encoding.UTF8.GetString(resp));
+
             OpenAiFile fileResponse = JsonConvert.DeserializeObject<OpenAiFile>(respTask.Result);
-            
+
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_UPLOAD_FILE_RESPONSE, fileResponse);
-            
+
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -119,7 +122,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
                 {
                     new DataDescription(typeof(FileData), FILE)
                 });
-            
+
                 return input.ToArray();
             }
         }

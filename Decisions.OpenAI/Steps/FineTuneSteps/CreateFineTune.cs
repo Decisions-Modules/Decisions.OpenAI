@@ -12,14 +12,14 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
 {
     [Writable]
     [AutoRegisterStep("Create Fine Tune", "Integration/OpenAI/Fine-Tune")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateFineTune : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
         
         private const string TRAINING_FILE_ID = "Training File ID";
         private const string OPENAI_FINE_TUNE_RESPONSE = "OpenAiCreateFineTune";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -43,17 +43,18 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             
             FineTuneRequest request = new FineTuneRequest();
             request.TrainingFile = trainingFileId;
-            
+
             string fineTuneRequest = request.JsonSerialize();
             FineTuneResponse fineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(fineTuneRequest, extension, ApiKeyOverride));
-            
+
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_FINE_TUNE_RESPONSE, fineTuneResponse);
-            
+
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -72,7 +73,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
                 {
                     new DataDescription(typeof(string), TRAINING_FILE_ID)
                 });
-            
+
                 return input.ToArray();
             }
         }

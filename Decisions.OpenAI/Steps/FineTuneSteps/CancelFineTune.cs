@@ -12,14 +12,14 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
 {
     [Writable]
     [AutoRegisterStep("Cancel Fine Tune", "Integration/OpenAI/Fine-Tune")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CancelFineTune : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
         
         private const string FINE_TUNE_ID = "Fine Tune ID";
         private const string OPENAI_CANCEL_FINE_TUNE_RESPONSE = "OpenAiCancelFineTune";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -40,16 +40,17 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             }
             
             string extension = $"fine-tunes/{fineTuneId}/cancel";
-            
+
             FineTuneResponse cancelFineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(null, extension, ApiKeyOverride));
-            
+
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_CANCEL_FINE_TUNE_RESPONSE, cancelFineTuneResponse);
-            
+
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -68,7 +69,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
                 {
                     new DataDescription(typeof(string), FINE_TUNE_ID)
                 });
-            
+
                 return input.ToArray();
             }
         }

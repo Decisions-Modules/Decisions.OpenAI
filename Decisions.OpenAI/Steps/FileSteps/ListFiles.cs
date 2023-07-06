@@ -12,13 +12,13 @@ namespace Decisions.OpenAI.Steps.FileSteps
 {
     [Writable]
     [AutoRegisterStep("List Files", "Integration/OpenAI/Files")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class ListFiles : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-        
+
         private const string OPENAI_LIST_FILES_RESPONSE = "OpenAiListFiles";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -36,14 +36,15 @@ namespace Decisions.OpenAI.Steps.FileSteps
             string? resp = OpenAiRest.OpenAiGet(extension, ApiKeyOverride);
 
             OpenAiFileContainer listFilesResponse = JsonConvert.DeserializeObject<OpenAiFileContainer>(resp);
-            
+
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_LIST_FILES_RESPONSE, listFilesResponse);
-            
+
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]

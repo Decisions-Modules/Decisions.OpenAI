@@ -12,14 +12,14 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Moderation", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateModeration : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-        
+
         private const string INPUT = "Input";
         private const string OPENAI_MODERATION_RESPONSE = "OpenAiModeration";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -49,11 +49,12 @@ namespace Decisions.OpenAI.Steps
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_MODERATION_RESPONSE, moderationResponse);
-            
+
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -72,7 +73,7 @@ namespace Decisions.OpenAI.Steps
                 {
                     new DataDescription(typeof(string), INPUT)
                 });
-            
+
                 return input.ToArray();
             }
         }

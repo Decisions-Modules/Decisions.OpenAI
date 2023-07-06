@@ -13,14 +13,14 @@ namespace Decisions.OpenAI.Steps.FileSteps
 {
     [Writable]
     [AutoRegisterStep("Delete File", "Integration/OpenAI/Files")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class DeleteFile : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
         
         private const string FILE_ID = "File ID";
         private const string OPENAI_DELETE_FILE_RESPONSE = "OpenAiDeleteFile";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -45,14 +45,15 @@ namespace Decisions.OpenAI.Steps.FileSteps
             string? resp = OpenAiRest.OpenAiDelete(extension, ApiKeyOverride);
 
             DeleteResponse deleteResponse = JsonConvert.DeserializeObject<DeleteResponse>(resp);
-            
+
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_DELETE_FILE_RESPONSE, deleteResponse);
-            
+
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -71,7 +72,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
                 {
                     new DataDescription(typeof(string), FILE_ID)
                 });
-            
+
                 return input.ToArray();
             }
         }
