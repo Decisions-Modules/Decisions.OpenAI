@@ -37,7 +37,7 @@ namespace Decisions.OpenAI
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("404"))
+                if (ex.Message.Contains("(404)"))
                 {
                     throw new Exception("(404) Not Found. Parameters may not be correct.", ex);
                 }
@@ -79,14 +79,19 @@ namespace Decisions.OpenAI
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("404"))
+                if (ex.Message.Contains("(400)"))
+                {
+                    throw new Exception("(400) Bad Request. Verify parameter values are within an acceptable range.", ex);
+                }
+                
+                if (ex.Message.Contains("(404)"))
                 {
                     throw new Exception("(404) Not Found. Parameters may not be correct. Verify model/file exists and OpenAI key has access to it.", ex);
                 }
                 
-                if (ex.Message.Contains("400"))
+                if (ex.Message.Contains("(429)"))
                 {
-                    throw new Exception("(400) Bad Request. Verify parameter values are within an acceptable range.", ex);
+                    throw new Exception("(429) Too Many Requests. Verify credit availability at https://platform.openai.com/account/usage.", ex);
                 }
 
                 if (ex.Message.Contains("timed out"))
@@ -123,9 +128,9 @@ namespace Decisions.OpenAI
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("404"))
+                if (ex.Message.Contains("(404)"))
                 {
-                    throw new Exception("(404) Not Found. Parameters may not be correct.", ex);
+                    throw new Exception("(404) Not Found. Parameters may not be correct. Verify model/file exists and OpenAI key has access to it.", ex);
                 }
                 
                 if (ex.Message.Contains("timed out"))

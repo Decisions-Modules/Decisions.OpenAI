@@ -11,7 +11,7 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Edit", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateEdit : ISyncStep, IDataConsumer
     {
         private const string OPENAI_EDIT_RESPONSE = "OpenAiEdit";

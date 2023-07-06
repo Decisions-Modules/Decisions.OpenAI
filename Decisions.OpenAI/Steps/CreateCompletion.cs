@@ -12,18 +12,18 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Completion", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateCompletion : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-        
+
         private const string PROMPT = "Prompt";
         private const string MAX_TOKENS = "Max Tokens";
         private const string TEMPERATURE = "Temperature";
         private const string NUMBER_OF_COMPLETIONS = "Number Of Completions";
         private const string MODEL_NAME_OVERRIDE = "Model Name Override";
         private const string OPENAI_COMPLETION_RESPONSE = "OpenAiCompletion";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -33,7 +33,7 @@ namespace Decisions.OpenAI.Steps
             get => apiKeyOverride;
             set => apiKeyOverride = value;
         }
-        
+
         [WritableValue]
         private string completionModel = "text-ada-001";
 
@@ -44,7 +44,7 @@ namespace Decisions.OpenAI.Steps
             get => completionModel;
             set => completionModel = value;
         }
-        
+
         [PropertyHidden(true)]
         public string[] CompletionModels
         {
@@ -60,7 +60,7 @@ namespace Decisions.OpenAI.Steps
                 };
             }
         }
-        
+
         public ResultData Run(StepStartData data)
         {
             string extension = "completions";
@@ -99,7 +99,7 @@ namespace Decisions.OpenAI.Steps
             {
                 request.N = 128;
             }
-            
+
             if (!string.IsNullOrEmpty(modelNameOverride))
             {
                 request.Model = modelNameOverride;
@@ -107,14 +107,15 @@ namespace Decisions.OpenAI.Steps
 
             string messageRequest = request.JsonSerialize();
             CompletionResponse completionResponse = CompletionResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
-            
+
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_COMPLETION_RESPONSE, completionResponse);
 
             return new ResultData(PATH_DONE, resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -137,7 +138,7 @@ namespace Decisions.OpenAI.Steps
                     new DataDescription(typeof(int), NUMBER_OF_COMPLETIONS),
                     new DataDescription(typeof(string), MODEL_NAME_OVERRIDE)
                 });
-            
+
                 return input.ToArray();
             }
         }

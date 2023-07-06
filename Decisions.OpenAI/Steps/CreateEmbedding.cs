@@ -11,11 +11,11 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Embedding", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateEmbedding : ISyncStep, IDataConsumer
     {
         private const string OPENAI_EMBEDDING_RESPONSE = "OpenAiEmbedding";
-        
+
         [WritableValue]
         private string apiKeyOverride;
 
@@ -28,11 +28,11 @@ namespace Decisions.OpenAI.Steps
 
         [WritableValue]
         private string embeddingsModel = "text-embedding-ada-002";
-        
+
         [PropertyClassification(1, "Chat Model", "Settings")]
         [SelectStringEditor(nameof(EmbeddingsModels))]
         public string EmbeddingsModel { get { return embeddingsModel; } set { embeddingsModel = value; } }
-        
+
         [PropertyHidden(true)]
         public string[] EmbeddingsModels
         {
@@ -49,7 +49,7 @@ namespace Decisions.OpenAI.Steps
         public ResultData Run(StepStartData data)
         {
             string[] inputs = data["input"] as string[];
-            
+
             string extension = "embeddings";
             EmbeddingRequest request = new EmbeddingRequest();
 
@@ -65,7 +65,8 @@ namespace Decisions.OpenAI.Steps
             return new ResultData("Done", resultData);
         }
 
-        public OutcomeScenarioData[] OutcomeScenarios {
+        public OutcomeScenarioData[] OutcomeScenarios
+        {
             get
             {
                 return new[]
@@ -80,12 +81,12 @@ namespace Decisions.OpenAI.Steps
             get
             {
                 List<DataDescription> input = new List<DataDescription>();
-                
+
                 input.AddRange(new[]
                 {
                     new DataDescription(typeof(string[]), "input")
                 });
-            
+
                 return input.ToArray();
             }
         }
