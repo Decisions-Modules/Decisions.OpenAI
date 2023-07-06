@@ -15,7 +15,7 @@ namespace Decisions.OpenAI.Steps
     [Writable]
     [ValidationRules]
     [ShapeImageAndColorProvider(null, "flow step images|type_json.svg")]
-    //[AutoRegisterStep("Get Json Schema", "Integration/OpenAI/Schema")]    
+    [AutoRegisterStep("Get Json Schema", "Integration/OpenAI/Schema")]
     public class GetJsonSchemaOpenAi : BaseFlowAwareStep, ISyncStep, IDataConsumer
     {
         private const string OUTPUT_PATH_NAME = "Done";
