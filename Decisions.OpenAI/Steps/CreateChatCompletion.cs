@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiChat;
+using Decisions.OpenAI.Settings;
 using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
@@ -91,15 +92,26 @@ namespace Decisions.OpenAI.Steps
 
             string messageRequest = request.JsonSerialize();
             
-            ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, EXTENSION, ApiKeyOverride));
+            ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
+
+            int chatIndex = chatResponse.Choices.Count - 1;
+
+            if (chatResponse == null || chatResponse.Choices == null ||
+                chatResponse.Choices[chatIndex] == null || chatResponse.Choices[chatIndex].Message == null ||
+                string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Role) ||
+                string.IsNullOrEmpty(chatResponse.Choices[chatIndex].Message.Content))
+            {
+                throw new BusinessRuleException(
+                    "OpenAI failed to return a chat completion. Please check the settings and try again.");
+            }
             
-            request.Messages.Add(chatResponse.Choices[chatResponse.Choices.Count-1].Message);
+            request.Messages.Add(chatResponse.Choices[chatIndex].Message);
 
             string conversation = null;
             
             foreach (ChatMessage chat in request.Messages)
             {
-                conversation += $"{chat.Role}: {chat.Content}\n";
+                conversation += $"{chat.Role[0].ToString().ToUpper()}{chat.Role.Substring(1)}:\n{chat.Content}\n\n";
             }
 
             data[CHAT_COMPLETION_ID] = request.JsonSerialize();
