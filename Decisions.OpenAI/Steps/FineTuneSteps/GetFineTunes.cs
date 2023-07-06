@@ -15,8 +15,8 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
     public class GetFineTunes : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-
-        private const string FINE_TUNE_ID = "fineTuneId";
+        
+        private const string FINE_TUNE_ID = "Fine Tune ID";
         private const string OPENAI_FINE_TUNES_RESPONSE = "OpenAiGetFineTunes";
 
         [WritableValue]
@@ -34,8 +34,8 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             string fineTuneId = data[FINE_TUNE_ID] as string;
 
             string extension = "fine-tunes";
-
-            // returns all fine tunes if 'fineTune' is null
+            
+            // returns all fine tunes if 'fineTune' is null or empty
             if (!string.IsNullOrEmpty(fineTuneId))
                 extension += '/' + fineTuneId;
 

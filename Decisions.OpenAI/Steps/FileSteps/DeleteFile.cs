@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -16,8 +17,8 @@ namespace Decisions.OpenAI.Steps.FileSteps
     public class DeleteFile : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-
-        private const string FILE_ID = "FileId";
+        
+        private const string FILE_ID = "File ID";
         private const string OPENAI_DELETE_FILE_RESPONSE = "OpenAiDeleteFile";
 
         [WritableValue]
@@ -33,7 +34,12 @@ namespace Decisions.OpenAI.Steps.FileSteps
         public ResultData Run(StepStartData data)
         {
             string fileId = data[FILE_ID] as string;
-
+            
+            if (string.IsNullOrEmpty(fileId))
+            {
+                throw new BusinessRuleException($"{FILE_ID} cannot be null or empty.");
+            }
+            
             string extension = $"files/{fileId}";
 
             string? resp = OpenAiRest.OpenAiDelete(extension, ApiKeyOverride);

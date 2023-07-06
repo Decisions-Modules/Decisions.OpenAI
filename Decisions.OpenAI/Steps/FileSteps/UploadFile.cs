@@ -47,7 +47,12 @@ namespace Decisions.OpenAI.Steps.FileSteps
         public ResultData Run(StepStartData data)
         {
             FileData file = data[FILE] as FileData;
-
+            
+            if (file == null)
+            {
+                throw new BusinessRuleException($"{FILE} cannot be null or empty.");
+            }
+            
             string url = "https://api.openai.com/v1/files";
             string multiPartBoundary = $"Boundary-{Guid.NewGuid().ToString()}";
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiFineTune;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -15,8 +16,8 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
     public class GetFineTuneEvents : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
-
-        private const string FINE_TUNE_ID = "fineTuneId";
+        
+        private const string FINE_TUNE_ID = "Fine Tune ID";
         private const string OPENAI_FINE_TUNE_EVENTS_RESPONSE = "OpenAiFineTuneEvents";
 
         [WritableValue]
@@ -32,7 +33,12 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         public ResultData Run(StepStartData data)
         {
             string fineTuneId = data[FINE_TUNE_ID] as string;
-
+            
+            if (string.IsNullOrEmpty(fineTuneId))
+            {
+                throw new BusinessRuleException($"{FINE_TUNE_ID} cannot be null or empty.");
+            }
+            
             string extension = $"fine-tunes/{fineTuneId}/events";
 
             ListFineTuneEventsResponse fineTuneEventsList = ListFineTuneEventsResponse.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));

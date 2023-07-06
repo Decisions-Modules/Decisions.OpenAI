@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiModel;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -32,7 +33,12 @@ namespace Decisions.OpenAI.Steps
         public ResultData Run(StepStartData data)
         {
             string model = data[MODEL] as string;
-
+            
+            if (string.IsNullOrEmpty(model))
+            {
+                throw new BusinessRuleException($"{MODEL} cannot be null or empty.");
+            }
+            
             string extension = $"models/{model}";
 
             OpenAiModel modelResponse = OpenAiModel.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));

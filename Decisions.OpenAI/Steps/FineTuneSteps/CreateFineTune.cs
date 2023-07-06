@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Decisions.OpenAI.DataTypes.OpenAiFineTune;
 using Decisions.OpenAI.Settings;
+using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.Mapping;
@@ -14,9 +15,10 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateFineTune : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "fine-tunes";
         private const string PATH_DONE = "Done";
-
-        private const string TRAINING_FILE_ID = "trainingFileId";
+        
+        private const string TRAINING_FILE_ID = "Training File ID";
         private const string OPENAI_FINE_TUNE_RESPONSE = "OpenAiCreateFineTune";
 
         [WritableValue]
@@ -32,13 +34,17 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         public ResultData Run(StepStartData data)
         {
             string trainingFileId = data[TRAINING_FILE_ID] as string;
+            
+            if (string.IsNullOrEmpty(trainingFileId))
+            {
+                throw new BusinessRuleException($"{TRAINING_FILE_ID} cannot be null or empty.");
+            }
 
-            string extension = "fine-tunes";
             FineTuneRequest request = new FineTuneRequest();
             request.TrainingFile = trainingFileId;
 
             string fineTuneRequest = request.JsonSerialize();
-            FineTuneResponse fineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(fineTuneRequest, extension, ApiKeyOverride));
+            FineTuneResponse fineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(fineTuneRequest, EXTENSION, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_FINE_TUNE_RESPONSE, fineTuneResponse);
