@@ -10,7 +10,7 @@ using DecisionsFramework.Design.Properties;
 namespace Decisions.OpenAI.Steps.FineTuneSteps
 {
     [Writable]
-    [AutoRegisterStep("Cancel Fine Tune", "Integration/OpenAI/Fine-Tune")]
+    [AutoRegisterStep("Get Fine Tune Events", "Integration/OpenAI/Fine-Tune")]
     [ShapeImageAndColorProvider(DecisionsFramework.ServiceLayer.Services.Image.ImageInfoType.Url, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class GetFineTuneEvents : ISyncStep, IDataConsumer
     {
