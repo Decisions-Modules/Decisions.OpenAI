@@ -59,6 +59,13 @@
       <ShortTypeName>Flow</ShortTypeName>
       <IsDeclaredDependency>false</IsDeclaredDependency>
     </ExportDependency>
+    <ExportDependency>
+      <Id>01H0WS0CW319N3TXE1TA842WFD.01H0X39QQBXMWGN8Q9QR9Y0XKK.ruleflow</Id>
+      <Name>Change Generate When Processing</Name>
+      <TypeName>DecisionsFramework.ServiceLayer.Services.ConfigurationStorage.ElementRegistration</TypeName>
+      <ShortTypeName>Flow</ShortTypeName>
+      <IsDeclaredDependency>false</IsDeclaredDependency>
+    </ExportDependency>
   </DependsOn>
   <DependsOnAssemblies />
   <StructureImport>false</StructureImport>
