@@ -17,7 +17,7 @@ namespace Decisions.OpenAI.Steps
         private const string EXTENSION = "models";
         private const string PATH_DONE = "Done";
 
-        private const string OPENAI_LIST_MODELS_RESPONSE = "OpenAiListModels";
+        private const string OPENAI_LIST_MODELS_RESPONSE = "OpenAI List Models";
 
         [WritableValue]
         private string apiKeyOverride;

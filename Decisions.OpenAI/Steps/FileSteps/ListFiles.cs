@@ -18,7 +18,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
         private const string EXTENSION = "files";
         private const string PATH_DONE = "Done";
 
-        private const string OPENAI_LIST_FILES_RESPONSE = "OpenAiListFiles";
+        private const string OPENAI_LIST_FILES_RESPONSE = "OpenAI List Files";
 
         [WritableValue]
         private string apiKeyOverride;

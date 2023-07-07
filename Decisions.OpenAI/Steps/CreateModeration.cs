@@ -19,7 +19,7 @@ namespace Decisions.OpenAI.Steps
         private const string PATH_DONE = "Done";
 
         private const string INPUT = "Input";
-        private const string OPENAI_MODERATION_RESPONSE = "OpenAiModeration";
+        private const string OPENAI_MODERATION_RESPONSE = "OpenAI Moderation";
 
         [WritableValue]
         private string apiKeyOverride;

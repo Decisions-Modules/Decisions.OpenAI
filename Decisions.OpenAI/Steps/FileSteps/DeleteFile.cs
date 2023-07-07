@@ -19,7 +19,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
         private const string PATH_DONE = "Done";
         
         private const string FILE_ID = "File ID";
-        private const string OPENAI_DELETE_FILE_RESPONSE = "OpenAiDeleteFile";
+        private const string OPENAI_DELETE_FILE_RESPONSE = "OpenAI Delete File";
 
         [WritableValue]
         private string apiKeyOverride;
