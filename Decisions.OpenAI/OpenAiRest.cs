@@ -39,7 +39,7 @@ namespace Decisions.OpenAI
             {
                 if (ex.Message.Contains("(404)"))
                 {
-                    throw new Exception("(404) Not Found. Parameters may not be correct.", ex);
+                    throw new Exception("(404) Not Found. Input parameters may not be correct. Verify model/file exists and OpenAI key has access to it.", ex);
                 }
                 
                 if (ex.Message.Contains("timed out"))
@@ -86,7 +86,7 @@ namespace Decisions.OpenAI
                 
                 if (ex.Message.Contains("(404)"))
                 {
-                    throw new Exception("(404) Not Found. Parameters may not be correct. Verify model/file exists and OpenAI key has access to it.", ex);
+                    throw new Exception("(404) Not Found. Input parameters may not be correct. Verify model/file exists and OpenAI key has access to it.", ex);
                 }
                 
                 if (ex.Message.Contains("(429)"))
