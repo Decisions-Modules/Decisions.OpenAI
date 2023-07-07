@@ -17,7 +17,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
     {
         private const string PATH_DONE = "Done";
 
-        private const string FINE_TUNE_ID = "fineTuneId";
+        private const string FINE_TUNE_ID = "Fine Tune ID";
         private const string OPENAI_FINE_TUNE_RESPONSE = "OpenAiRetrieveFineTune";
 
         [WritableValue]
