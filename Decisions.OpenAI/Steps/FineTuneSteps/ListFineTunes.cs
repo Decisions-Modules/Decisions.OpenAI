@@ -10,13 +10,13 @@ using DecisionsFramework.Design.Properties;
 namespace Decisions.OpenAI.Steps.FineTuneSteps
 {
     [Writable]
-    [AutoRegisterStep("Get Fine Tunes", "Integration/OpenAI/Fine-Tune")]
+    [AutoRegisterStep("List Fine Tunes", "Integration/OpenAI/Fine-Tune")]
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
-    public class GetFineTunes : ISyncStep, IDataConsumer
+    public class ListFineTunes : ISyncStep, IDataConsumer
     {
+        private const string EXTENSION = "fine-tunes";
         private const string PATH_DONE = "Done";
-        
-        private const string FINE_TUNE_ID = "Fine Tune ID";
+
         private const string OPENAI_FINE_TUNES_RESPONSE = "OpenAiGetFineTunes";
 
         [WritableValue]
@@ -31,15 +31,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
 
         public ResultData Run(StepStartData data)
         {
-            string fineTuneId = data[FINE_TUNE_ID] as string;
-
-            string extension = "fine-tunes";
-            
-            // returns all fine tunes if 'fineTune' is null or empty
-            if (!string.IsNullOrEmpty(fineTuneId))
-                extension += '/' + fineTuneId;
-
-            ListFineTuneResponse fineTuneList = ListFineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));
+            ListFineTuneResponse fineTuneList = ListFineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiGet(EXTENSION, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_FINE_TUNES_RESPONSE, fineTuneList);
@@ -58,18 +50,6 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             }
         }
 
-        public DataDescription[] InputData
-        {
-            get
-            {
-                List<DataDescription> input = new List<DataDescription>();
-                input.AddRange(new[]
-                {
-                    new DataDescription(typeof(string), FINE_TUNE_ID)
-                });
-
-                return input.ToArray();
-            }
-        }
+        public DataDescription[] InputData { get; }
     }
 }
