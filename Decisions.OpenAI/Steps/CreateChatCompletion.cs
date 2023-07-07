@@ -92,7 +92,7 @@ namespace Decisions.OpenAI.Steps
 
             string messageRequest = request.JsonSerialize();
             
-            ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, extension, ApiKeyOverride));
+            ChatResponse chatResponse = ChatResponse.JsonDeserialize(OpenAiRest.OpenAiPost(messageRequest, EXTENSION, ApiKeyOverride));
 
             int chatIndex = chatResponse.Choices.Count - 1;
 
