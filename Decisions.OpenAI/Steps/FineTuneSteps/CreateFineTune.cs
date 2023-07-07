@@ -19,7 +19,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         private const string PATH_DONE = "Done";
         
         private const string TRAINING_FILE_ID = "Training File ID";
-        private const string OPENAI_FINE_TUNE_RESPONSE = "OpenAiCreateFineTune";
+        private const string OPENAI_FINE_TUNE_RESPONSE = "OpenAI Create Fine Tune";
 
         [WritableValue]
         private string apiKeyOverride;

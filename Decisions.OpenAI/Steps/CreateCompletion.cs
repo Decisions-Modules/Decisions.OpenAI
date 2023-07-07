@@ -24,7 +24,7 @@ namespace Decisions.OpenAI.Steps
         private const string TEMPERATURE = "Temperature";
         private const string NUMBER_OF_COMPLETIONS = "Number Of Completions";
         private const string MODEL_NAME_OVERRIDE = "Model Name Override";
-        private const string OPENAI_COMPLETION_RESPONSE = "OpenAiCompletion";
+        private const string OPENAI_COMPLETION_RESPONSE = "OpenAI Completion";
 
         [WritableValue]
         private string apiKeyOverride;

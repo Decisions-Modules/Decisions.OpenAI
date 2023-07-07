@@ -19,7 +19,7 @@ namespace Decisions.OpenAI.Steps
         private const string PATH_DONE = "Done";
         
         private const string INPUT = "Input";
-        private const string OPENAI_EMBEDDING_RESPONSE = "OpenAiEmbedding";
+        private const string OPENAI_EMBEDDING_RESPONSE = "OpenAI Embedding";
 
         [WritableValue]
         private string apiKeyOverride;

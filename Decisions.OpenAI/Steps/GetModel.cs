@@ -18,7 +18,7 @@ namespace Decisions.OpenAI.Steps
         private const string PATH_DONE = "Done";
 
         private const string MODEL = "Model";
-        private const string OPENAI_GET_MODEL_RESPONSE = "OpenAiGetModel";
+        private const string OPENAI_GET_MODEL_RESPONSE = "OpenAI Model";
 
         [WritableValue]
         private string apiKeyOverride;

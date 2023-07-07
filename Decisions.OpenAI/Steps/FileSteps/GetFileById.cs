@@ -19,7 +19,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
         private const string PATH_DONE = "Done";
 
         private const string FILE_ID = "File ID";
-        private const string OPENAI_GET_FILE_RESPONSE = "OpenAiGetFileById";
+        private const string OPENAI_GET_FILE_RESPONSE = "OpenAI File By ID";
 
         [WritableValue]
         private string apiKeyOverride;

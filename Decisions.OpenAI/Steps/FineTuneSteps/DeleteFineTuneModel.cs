@@ -18,7 +18,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         private const string PATH_DONE = "Done";
         
         private const string FINE_TUNED_MODEL = "Fine Tuned Model";
-        private const string OPENAI_DELETE_FINE_TUNE_RESPONSE = "OpenAiDeleteFineTune";
+        private const string OPENAI_DELETE_FINE_TUNE_RESPONSE = "OpenAI Delete Fine Tune";
         
         [WritableValue]
         private string apiKeyOverride;

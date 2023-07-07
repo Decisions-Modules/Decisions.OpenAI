@@ -22,7 +22,7 @@ namespace Decisions.OpenAI.Steps
 
         private const string MESSAGE = "Message";
         private const string CLEAR_CONVERSATION = "Clear Conversation";
-        private const string OPENAI_CHAT_COMPLETION_RESPONSE = "OpenAiChatCompletion";
+        private const string OPENAI_CHAT_COMPLETION_RESPONSE = "OpenAI Chat Completion";
         
         [WritableValue]
         private string apiKeyOverride;

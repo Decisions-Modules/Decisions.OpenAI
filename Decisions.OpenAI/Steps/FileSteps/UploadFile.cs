@@ -26,7 +26,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
         private const string PATH_DONE = "Done";
 
         private const string FILE = "File";
-        private const string OPENAI_UPLOAD_FILE_RESPONSE = "OpenAiUploadFile";
+        private const string OPENAI_UPLOAD_FILE_RESPONSE = "OpenAI Upload File";
 
         [WritableValue]
         private string apiKeyOverride;

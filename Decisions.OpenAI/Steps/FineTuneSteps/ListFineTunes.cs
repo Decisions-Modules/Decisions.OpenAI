@@ -17,7 +17,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         private const string EXTENSION = "fine-tunes";
         private const string PATH_DONE = "Done";
 
-        private const string OPENAI_FINE_TUNES_RESPONSE = "OpenAiGetFineTunes";
+        private const string OPENAI_FINE_TUNES_RESPONSE = "OpenAI List Fine Tunes";
 
         [WritableValue]
         private string apiKeyOverride;

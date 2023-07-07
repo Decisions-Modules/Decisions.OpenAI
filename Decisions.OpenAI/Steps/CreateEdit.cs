@@ -20,7 +20,7 @@ namespace Decisions.OpenAI.Steps
         
         private const string INPUT = "Input";
         private const string INSTRUCTION = "Instruction";
-        private const string OPENAI_EDIT_RESPONSE = "OpenAiEdit";
+        private const string OPENAI_EDIT_RESPONSE = "OpenAI Edit";
         
         [WritableValue]
         private string apiKeyOverride;

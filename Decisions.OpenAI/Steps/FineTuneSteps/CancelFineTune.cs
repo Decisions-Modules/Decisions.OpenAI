@@ -18,7 +18,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
         private const string PATH_DONE = "Done";
         
         private const string FINE_TUNE_ID = "Fine Tune ID";
-        private const string OPENAI_CANCEL_FINE_TUNE_RESPONSE = "OpenAiCancelFineTune";
+        private const string OPENAI_CANCEL_FINE_TUNE_RESPONSE = "OpenAI Cancel Fine Tune";
 
         [WritableValue]
         private string apiKeyOverride;
