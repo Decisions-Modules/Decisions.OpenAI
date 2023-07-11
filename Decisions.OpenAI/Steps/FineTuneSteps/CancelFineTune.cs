@@ -41,7 +41,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             
             string extension = $"fine-tunes/{fineTuneId}/cancel";
 
-            FineTuneResponse cancelFineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(null, extension, ApiKeyOverride));
+            FineTuneResponse cancelFineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(string.Empty, extension, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_CANCEL_FINE_TUNE_RESPONSE, cancelFineTuneResponse);
@@ -55,7 +55,10 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(FineTuneResponse), OPENAI_CANCEL_FINE_TUNE_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(FineTuneResponse), OPENAI_CANCEL_FINE_TUNE_RESPONSE)
+                    {
+                        DisplayName = OPENAI_CANCEL_FINE_TUNE_RESPONSE
+                    })
                 };
             }
         }

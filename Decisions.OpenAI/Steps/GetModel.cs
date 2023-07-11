@@ -55,7 +55,10 @@ namespace Decisions.OpenAI.Steps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAiModel), OPENAI_GET_MODEL_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAiModel), OPENAI_GET_MODEL_RESPONSE)
+                    {
+                        DisplayName = OPENAI_GET_MODEL_RESPONSE
+                    })
                 };
             }
         }

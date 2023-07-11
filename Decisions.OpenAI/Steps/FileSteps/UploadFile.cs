@@ -108,7 +108,10 @@ namespace Decisions.OpenAI.Steps.FileSteps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAiFile), OPENAI_UPLOAD_FILE_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAiFile), OPENAI_UPLOAD_FILE_RESPONSE)
+                    {
+                        DisplayName = OPENAI_UPLOAD_FILE_RESPONSE
+                    })
                 };
             }
         }
