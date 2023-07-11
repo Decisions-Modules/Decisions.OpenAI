@@ -41,7 +41,7 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             
             string extension = $"fine-tunes/{fineTuneId}/cancel";
 
-            FineTuneResponse cancelFineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost("", extension, ApiKeyOverride));
+            FineTuneResponse cancelFineTuneResponse = FineTuneResponse.JsonDeserialize(OpenAiRest.OpenAiPost(string.Empty, extension, ApiKeyOverride));
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_CANCEL_FINE_TUNE_RESPONSE, cancelFineTuneResponse);
