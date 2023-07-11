@@ -13,7 +13,7 @@ namespace Decisions.OpenAI.Steps
 {
     [Writable]
     [AutoRegisterStep("Create Chat Completion", "Integration/OpenAI")]
-    [ShapeImageAndColorProvider(null, "flow step images|openai.svg")]
+    [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
     public class CreateChatCompletion : ISyncStep, IDataConsumer
     {
         private const string EXTENSION = "chat/completions";
@@ -137,7 +137,10 @@ namespace Decisions.OpenAI.Steps
                 {
                     new OutcomeScenarioData(PATH_DONE, new []
                     {
-                        new DataDescription(typeof(ChatResponse), OPENAI_CHAT_COMPLETION_RESPONSE),
+                        new DataDescription(typeof(ChatResponse), OPENAI_CHAT_COMPLETION_RESPONSE)
+                        {
+                            DisplayName = OPENAI_CHAT_COMPLETION_RESPONSE
+                        },
                         new DataDescription(typeof(string), CONVERSATION)
                     })
                 };

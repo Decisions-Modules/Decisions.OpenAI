@@ -54,7 +54,10 @@ namespace Decisions.OpenAI.Steps.FineTuneSteps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(DeleteResponse), OPENAI_DELETE_FINE_TUNE_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(DeleteResponse), OPENAI_DELETE_FINE_TUNE_RESPONSE)
+                    {
+                        DisplayName = OPENAI_DELETE_FINE_TUNE_RESPONSE
+                    })
                 };
             }
         }

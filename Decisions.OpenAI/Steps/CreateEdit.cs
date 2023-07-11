@@ -82,7 +82,10 @@ namespace Decisions.OpenAI.Steps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(EditResponse), OPENAI_EDIT_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(EditResponse), OPENAI_EDIT_RESPONSE)
+                    {
+                        DisplayName = OPENAI_EDIT_RESPONSE
+                    })
                 };
             }
         }

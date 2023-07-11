@@ -80,7 +80,10 @@ namespace Decisions.OpenAI.Steps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(EmbeddingResponse), OPENAI_EMBEDDING_RESPONSE))
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(EmbeddingResponse), OPENAI_EMBEDDING_RESPONSE)
+                    {
+                        DisplayName = OPENAI_EMBEDDING_RESPONSE
+                    })
                 };
             }
         }
