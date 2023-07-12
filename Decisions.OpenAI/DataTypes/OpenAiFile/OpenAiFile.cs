@@ -1,8 +1,10 @@
-﻿using DecisionsFramework.Design.ConfigurationStorage.Attributes;
+﻿using System.Runtime.Serialization;
+using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiFile
 {
+    [DataContract]
     [Writable]
     public class OpenAiFile
     {

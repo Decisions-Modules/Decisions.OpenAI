@@ -1,8 +1,10 @@
+using System.Runtime.Serialization;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiModeration
 {
+    [DataContract]
     [Writable]
     public class ModerationCategoryScores
     {
