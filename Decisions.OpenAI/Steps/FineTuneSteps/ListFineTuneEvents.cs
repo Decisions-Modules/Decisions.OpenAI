@@ -11,9 +11,9 @@ using DecisionsFramework.Design.Properties;
 namespace Decisions.OpenAI.Steps.FineTuneSteps
 {
     [Writable]
-    [AutoRegisterStep("Get Fine Tune Events", "Integration/OpenAI/Fine-Tune")]
+    [AutoRegisterStep("List Fine Tune Events", "Integration/OpenAI/Fine-Tune")]
     [ShapeImageAndColorProvider(null, OpenAISettings.OPEN_AI_IMAGES_PATH)]
-    public class GetFineTuneEvents : ISyncStep, IDataConsumer
+    public class ListFineTuneEvents : ISyncStep, IDataConsumer
     {
         private const string PATH_DONE = "Done";
         
