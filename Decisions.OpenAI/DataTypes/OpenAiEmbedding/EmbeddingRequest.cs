@@ -1,10 +1,12 @@
 using System;
+using System.Runtime.Serialization;
 using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiEmbedding
 {
+    [DataContract]
     [Writable]
     public class EmbeddingRequest
     {

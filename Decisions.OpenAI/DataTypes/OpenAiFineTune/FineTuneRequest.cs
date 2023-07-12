@@ -1,10 +1,12 @@
 using System;
+using System.Runtime.Serialization;
 using DecisionsFramework;
 using DecisionsFramework.Design.ConfigurationStorage.Attributes;
 using Newtonsoft.Json;
 
 namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
 {
+    [DataContract]
     [Writable]
     public class FineTuneRequest
     {
