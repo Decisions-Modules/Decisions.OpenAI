@@ -41,7 +41,7 @@ namespace Decisions.OpenAI.Steps
             
             string extension = $"models/{model}";
 
-            OpenAiModel modelResponse = OpenAiModel.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));
+            OpenAIModel modelResponse = OpenAIModel.JsonDeserialize(OpenAiRest.OpenAiGet(extension, ApiKeyOverride));
             
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_GET_MODEL_RESPONSE, modelResponse);
@@ -55,7 +55,7 @@ namespace Decisions.OpenAI.Steps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAiModel), OPENAI_GET_MODEL_RESPONSE)
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAIModel), OPENAI_GET_MODEL_RESPONSE)
                     {
                         DisplayName = OPENAI_GET_MODEL_RESPONSE
                     })

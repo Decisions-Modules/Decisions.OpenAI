@@ -9,7 +9,7 @@ namespace Decisions.OpenAI.DataTypes.OpenAiModel
 {
     [DataContract]
     [Writable]
-    public class OpenAiModel
+    public class OpenAIModel
     {
         [WritableValue]
         [JsonProperty("id")]
@@ -39,11 +39,11 @@ namespace Decisions.OpenAI.DataTypes.OpenAiModel
         [JsonProperty("parent")]
         public string Parent { get; set; }
         
-        public static OpenAiModel JsonDeserialize(string json)
+        public static OpenAIModel JsonDeserialize(string json)
         {
             try
             {
-                OpenAiModel text = JsonConvert.DeserializeObject<OpenAiModel>(json);
+                OpenAIModel text = JsonConvert.DeserializeObject<OpenAIModel>(json);
                 return text;
             }
             catch (Exception e)

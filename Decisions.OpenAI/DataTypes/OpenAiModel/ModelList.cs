@@ -13,7 +13,7 @@ namespace Decisions.OpenAI.DataTypes.OpenAiModel
     {
         [WritableValue]
         [JsonProperty("data")]
-        public List<OpenAiModel> Data { get; set; }
+        public List<OpenAIModel> Data { get; set; }
         
         [WritableValue]
         [JsonProperty("object")]

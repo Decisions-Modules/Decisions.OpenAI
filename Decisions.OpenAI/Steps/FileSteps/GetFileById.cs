@@ -44,7 +44,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
 
             string? resp = OpenAiRest.OpenAiGet(extension, ApiKeyOverride);
 
-            OpenAiFile fileResponse = JsonConvert.DeserializeObject<OpenAiFile>(resp);
+            OpenAIFile fileResponse = JsonConvert.DeserializeObject<OpenAIFile>(resp);
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_GET_FILE_RESPONSE, fileResponse);
@@ -58,7 +58,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAiFile), OPENAI_GET_FILE_RESPONSE)
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAIFile), OPENAI_GET_FILE_RESPONSE)
                     {
                         DisplayName = OPENAI_GET_FILE_RESPONSE
                     })

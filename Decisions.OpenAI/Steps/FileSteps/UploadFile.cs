@@ -94,7 +94,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
 
             Task<string> respTask = Task.FromResult(Encoding.UTF8.GetString(resp));
 
-            OpenAiFile fileResponse = JsonConvert.DeserializeObject<OpenAiFile>(respTask.Result);
+            OpenAIFile fileResponse = JsonConvert.DeserializeObject<OpenAIFile>(respTask.Result);
 
             Dictionary<string, object> resultData = new Dictionary<string, object>();
             resultData.Add(OPENAI_UPLOAD_FILE_RESPONSE, fileResponse);
@@ -108,7 +108,7 @@ namespace Decisions.OpenAI.Steps.FileSteps
             {
                 return new[]
                 {
-                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAiFile), OPENAI_UPLOAD_FILE_RESPONSE)
+                    new OutcomeScenarioData(PATH_DONE, new DataDescription(typeof(OpenAIFile), OPENAI_UPLOAD_FILE_RESPONSE)
                     {
                         DisplayName = OPENAI_UPLOAD_FILE_RESPONSE
                     })
