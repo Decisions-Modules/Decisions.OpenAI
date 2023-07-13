@@ -6,7 +6,7 @@ namespace Decisions.OpenAI.DataTypes.OpenAiFile
 {
     [DataContract]
     [Writable]
-    public class OpenAiFile
+    public class OpenAIFile
     {
         [WritableValue]
         [JsonProperty("id")]

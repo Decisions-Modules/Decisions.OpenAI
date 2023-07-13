@@ -41,7 +41,7 @@ namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
         
         [WritableValue]
         [JsonProperty("result_files")]
-        public List<OpenAiFile.OpenAiFile> ResultFiles { get; set; }
+        public List<OpenAiFile.OpenAIFile> ResultFiles { get; set; }
         
         [WritableValue]
         [JsonProperty("status")]
@@ -49,11 +49,11 @@ namespace Decisions.OpenAI.DataTypes.OpenAiFineTune
         
         [WritableValue]
         [JsonProperty("validation_files")]
-        public List<OpenAiFile.OpenAiFile> ValidationFiles { get; set; }
+        public List<OpenAiFile.OpenAIFile> ValidationFiles { get; set; }
         
         [WritableValue]
         [JsonProperty("training_files")]
-        public List<OpenAiFile.OpenAiFile> TrainingFiles { get; set; }
+        public List<OpenAiFile.OpenAIFile> TrainingFiles { get; set; }
         
         [WritableValue]
         [JsonProperty("hyperparams")]

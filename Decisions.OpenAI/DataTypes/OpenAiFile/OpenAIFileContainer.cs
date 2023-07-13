@@ -6,7 +6,7 @@ namespace Decisions.OpenAI.DataTypes.OpenAiFile
 {
     [DataContract]
     [Writable]
-    public class OpenAiFileContainer
+    public class OpenAIFileContainer
     {
         [WritableValue]
         [JsonProperty("object")]
@@ -14,6 +14,6 @@ namespace Decisions.OpenAI.DataTypes.OpenAiFile
 
         [WritableValue]
         [JsonProperty("data")]
-        public OpenAiFile[] Data { get; set; }
+        public OpenAIFile[] Data { get; set; }
     }
 }
