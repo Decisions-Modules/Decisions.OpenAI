@@ -7,6 +7,53 @@ param (
 
 function FindMSBuild {
     $guess = &"${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -prerelease -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe
+    if (Test-Path -PathType leaf -LiteralPath $guess) {
+        return $guess
+    }
+    
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+
+    # Check for Visual Studio MSBuild version 2019 (15.0)
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+
+    # Check for Visual Studio MSBuild version 2019 (15.0)
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "Microsoft Visual Studio\2019\Professional\MSBuild\Current\bin\msbuild.exe"
+        if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "\Microsoft Visual Studio\2019\Professional\MSBuild\Current\bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+
+    $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+	
+	$guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\msbuild.exe"
     if (Test-Path -PathType leaf -LiteralPath $guess ) {
         return $guess
     }
