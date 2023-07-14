@@ -18,7 +18,7 @@ namespace Decisions.OpenAI.Steps
         private const string EXTENSION = "embeddings";
         private const string PATH_DONE = "Done";
         
-        private const string INPUT = "Input";
+        private const string INPUTS = "Inputs";
         private const string OPENAI_EMBEDDING_RESPONSE = "OpenAI Embedding";
 
         [WritableValue]
@@ -53,11 +53,11 @@ namespace Decisions.OpenAI.Steps
 
         public ResultData Run(StepStartData data)
         {
-            string[] inputs = data[INPUT] as string[];
+            string[]? inputs = data[INPUTS] as string[];
             
             if (inputs == null || inputs.Length == 0)
             {
-                throw new BusinessRuleException($"{INPUT} cannot be null or empty.");
+                throw new BusinessRuleException($"{INPUTS} cannot be null or empty.");
             }
             
             EmbeddingRequest request = new EmbeddingRequest();
@@ -96,7 +96,7 @@ namespace Decisions.OpenAI.Steps
 
                 input.AddRange(new[]
                 {
-                    new DataDescription(typeof(string[]), "input")
+                    new DataDescription(typeof(string[]), INPUTS)
                 });
 
                 return input.ToArray();
