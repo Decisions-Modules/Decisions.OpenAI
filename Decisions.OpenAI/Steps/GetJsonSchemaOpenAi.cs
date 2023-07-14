@@ -17,6 +17,7 @@ namespace Decisions.OpenAI.Steps
     [ShapeImageAndColorProvider(null, "flow step images|type_json.svg")]
     // This step exists only because the step in framework is broken, but it's needed in a form.
     //[AutoRegisterStep("Get Json Schema", "Integration/OpenAI/Schema")]
+    [Obsolete]
     public class GetJsonSchemaOpenAi : BaseFlowAwareStep, ISyncStep, IDataConsumer
     {
         private const string OUTPUT_PATH_NAME = "Done";
