@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExportDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>TextAreaOverflowCSS</Name>
+  <ParentFolderId>CSS FOLDER</ParentFolderId>
+  <ParentFolderPath>System/Designers/Css</ParentFolderPath>
+  <TypeName>DecisionsFramework.ServiceLayer.Services.Document.Document</TypeName>
+  <ShortTypeName>Document</ShortTypeName>
+  <Id>01H5MK25HAD0GJ5ZJWZDBK8ZBC</Id>
+  <ExportedBy>admin@decisions.com</ExportedBy>
+  <ExportedOn>2023-07-18T10:16:13.3627156-04:00</ExportedOn>
+  <PlatformVersion>8.13.0.72094</PlatformVersion>
+  <DependsOn />
+  <DependsOnAssemblies />
+  <StructureImport>false</StructureImport>
+  <DependsOnStructures>false</DependsOnStructures>
+  <Size>1321</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgABlLyVsR68/BZAQAAiQEAAAEAAAAx8yrOzwsuyS9KTE8N8GZmEWFg4OBgYAv6FFZyY0sSGyMDwzQg5mZgYEBSOKXfMbvZQaD1f9ebyom+3a4s/IVbDW+tcOm84r0xzWt6jsmbdbmqP+5vjvbwerlyeuK9D2dnm6e7TCh3sw6OW7XnRLPKItFPHNc+7ezY9FTNSY5rYfIk3r01Im8F7dgLN3gLyK9pXl7GVCh6Se/qkYU17AFmU41kdn3k2Nu1b8q6Kvno+rkbtjInuu3L1n+XmyScc3Hi6sCG+4dXuJzeGNqzfk6pps/VgoZ7793PCbol1Jx9ZXVF8aRSmdnLucLpqxUKPWQDtt+zu7DjllTI/fDL+XmSk0IfmXjebXF8Zca4t/BqSZPP89/nX19Pz+8t425sbtq7rfJ3YGW+U8bZlC3pXXzLX0rPMIzKnnLmsysDIxtDgDcjkzED7gBDBSjhzMoGEmIEQksgrc8I4gEAUEsDBBQAAAgIAAZS8la24xQSLgAAADQAAAABAAAANNMLSa0ocSxKTQzPLMnwL0stSsvJL1coAQomAgWrebk486GCVgqJpSX51rxctQBQSwMEFAAACAgABlLyVsa8jg6DAgAAKQYAAAsAAABKc29uU3RvcmFnZbRUbU/bMBD+K1G+8KXL0pSUtqNoTVIo5SUVjVqBkJAbX6jBcSrbKWSo/312mxQYbEhs+5L47p578T13fjJts/NkTvTnJgpHoTfs+5HZsWtKvBz1z3tnfbNjBhATQTImDjlK4SHj99YY+JLEcIoK4JUgrCCL8xSY3B5qxlvfmjEBrlXdllVvWLZl1ww/pzLn0GWQS45ozRjlM0riEyii7B5Yl+WUmjUTHiUw7XqDkUQ3S0Rz0LUf43XNHmGIF2OZccDh7A5iqQ31lbpNkvEYAuU0QwI0At0qTzNRQRFOCSNC5VXqCYGHkNGislEaoVuhHZVGK3g8J0vAlb0UFUCHs5Uq5qAE7OkQ69DfcdUCK87SZ0TISq9mo+W4TrPd2Ku33V3bbukwuOzgcaDj1gfu2YnjDnqBfTR0r4bTq8A7aV15/gtkVCx0tFgI3SkmiSwCEDEnC6mSK8v+XKb0YH8OCB/sf938ZhkuDCELCt1rM8mY/JKglNCiY+z0OEF055ux1gryAzpG3Vk8XpvKWbvpGDrgNtthRjHwdcH+eGwchqdB/2JrPVf0K0ukOOypBoRL4AnNHhRSQeZIRPM8nTFEaNnaOcEYWCkQ0cdE+tmi2Co2E1KKaYZJQv7Y9QryXtObbaeum65vqWyuo84bzh11AApyy3gphayku1+N5AbfUMO2nkb1b7zYrU8s01izMp4DSMsXotqodT5N6P9ardcDd37kDV176vmt6UXTH0TPfH48mBucHsuS+8+/I+ZHNPwyICULmg3n71h4U0rglc/HPyagWuPNHH3wpu2unh3Kcl7zEVxGjekgGk2jdn+yNzgbqAwJofCbLbQ2r8b7XXRWq58CDABQSwECMwAUAAAICAAGUvJWxHrz8FkBAACJAQAAAQAAAAAAAAAAAAAAAAAAAAAAMVBLAQIzABQAAAgIAAZS8la24xQSLgAAADQAAAABAAAAAAAAAAAAAAAAAHgBAAA0UEsBAjMAFAAACAgABlLyVsa8jg6DAgAAKQYAAAsAAAAAAAAAAAAAAAAAxQEAAEpzb25TdG9yYWdlUEsFBgAAAAADAAMAlwAAAHEEAAAAAA==</Data>
+  <RequiresApproval>false</RequiresApproval>
+  <OverridingImport>false</OverridingImport>
+  <ModuleName>Decisions.OpenAI</ModuleName>
+  <ImportOrder>400</ImportOrder>
+  <ModifiedOn>2023-07-18T09:29:31.956921</ModifiedOn>
+  <AllTagsData />
+  <TagData />
+</ExportDescription>

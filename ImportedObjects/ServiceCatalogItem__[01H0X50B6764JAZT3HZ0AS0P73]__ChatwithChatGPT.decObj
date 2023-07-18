@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ExportDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Chat with Chat GPT</Name>
+  <Name>Chat with ChatGPT</Name>
   <ParentFolderId>01H0X4YSXKYKKBN0539SC23R0E</ParentFolderId>
   <ParentFolderPath>System/Applications/Workflow Catalog/OpenAI</ParentFolderPath>
   <TypeName>DecisionsFramework.ServiceLayer.Services.ServiceCatalog.ServiceCatalogItem</TypeName>
   <ShortTypeName>Service Catalog Item</ShortTypeName>
   <Id>01H0X50B6764JAZT3HZ0AS0P73</Id>
   <ExportedBy>admin@decisions.com</ExportedBy>
-  <ExportedOn>2023-07-11T15:28:05.6523362-04:00</ExportedOn>
-  <PlatformVersion>8.13.0.72152</PlatformVersion>
+  <ExportedOn>2023-07-18T10:16:13.4295796-04:00</ExportedOn>
+  <PlatformVersion>8.13.0.72094</PlatformVersion>
   <DependsOn />
   <DependsOnAssemblies />
   <StructureImport>false</StructureImport>
   <DependsOnStructures>false</DependsOnStructures>
-  <Size>1007</Size>
-  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgAgnvrVhxgi2EUAQAASAEAAAEAAAAx8yrOzwsuyS9KTE8N8GZmEWFg4OBgCMjfEnZSuKL/KAMDgwgjAwM3kEZSWNLvzX3IQKDlv9fNYo6V+Vy2GWvfu18JutB9ZJeXodoEsy6P/7s/PnD9uOnNduPDG/wTBGwUa/trNz05fU+lT4hDonDH04+LrPsVG+zSKidmh/L07HgUO5v77oKdTyXPHWE+y951XqgzyKP236HCzusTA9w7ly1gXvm+PvXRXzMh/VLLci7rK+sD3SQ/Kml7ZxuEZHgrq3zcYXvCZvYj5YviIQs3BTE1Tn4tJX9X/oz8u4rlV3Pf3Lo4a3lp/cWcb7+0jyWv4Niju2ZVHBMPQ4A3I5MxA27/ogKUYGJlAwkxAqElkH4HVgAAUEsDBBQAAAgIAIJ761YjJEBqCgIAAHgDAAALAAAASnNvblN0b3JhZ2V0UmFv2jAQ/SsonzPkECCAhDQgYbQUgpoMlX6ZTHwkXh0b2U5bVPHfZ4fAuk3Lh8h3fvfuvfN9OMgZfThb+/uRxpt4eh/NUmeEXBPuNtF6soqckRNCRhUVXM0lLuFNyJd2AvKVZvCATyCvgboeZlhjJvK/wjsNpdv6l8ttbUHa1HjQ9vw2aiO3NauYriSMOVRaYua2NtWe0WwJp1S8AB/zijHHdTLMkyrPQelUfFcgjdaDSReYEwYyNH2tsztSO5pSjuUp0UICifc/IdP2wjtbmpvAWJKaBhkaVYi3mK/EnjJomE3Dx4rHhwOj/Jo7WmmqmAtZLoTSJjtRISiacyCW5c8hhJbcW6CnHpr2g373fvKc+otnNEnQJvA/4S9UVgdVNpgcpXinJdY3LQWWOawEAWYya1FXuA68H401ICE+qdQkyyODuuaLZ0dDCQHeMGBSUk6VmbAZypaCcctOzR1wTfVpLpiZx2/R3V3ytNwtl9M16vnDZNbxH1F0Q6/NixrkrMC69UZ10apP3zapVSvBSCcxDy8O+v6gg7xBMPQ6Q+Qj8xlQKQg9UKv9hun2A38YoH7XwGtMQzS1QpNdkkarT4V1trb1lVwXrZ2J0pqVWUFfzZM03puwadXrdQZBMLQ9ms9iGEtxri575JhECHaWV4omivn/6qmKCNUzcbwM1WxavYrn8y8BBgBQSwECMwAUAAAICACCe+tWHGCLYRQBAABIAQAAAQAAAAAAAAAAAAAAAAAAAAAAMVBLAQIzABQAAAgIAIJ761YjJEBqCgIAAHgDAAALAAAAAAAAAAAAAAAAADMBAABKc29uU3RvcmFnZVBLBQYAAAAAAgACAGgAAABmAwAAAAA=</Data>
+  <Size>998</Size>
+  <Data>SnNvblN0b3JhZ2VQSwMEFAAACAgABlLyVhh7Oo8VAQAASQEAAAEAAAAx8yrOzwsuyS9KTE8N8GZmEWFg4OBguFv0MeyHQdL8YwwMDCKMDAzcQBpJYUm/N/chA4GW/143izk07TS/LNi6Tz7Q21Ff6LXW0RkOtzSU/r5fxq7fNT11/1zJtlrG5gesmbZ8J7vW/7ps4aWQcORh3/HT95TaGNhmPHVdF2po8qiNP3ddSfezeekW4v4m8hp23ipeil+fcqur3jvmNFdlVhPf0ro/Uzu/3/bYc+XpHc03QfsdJVOPdK/RWXswYKFu74Qjj79pfM5pO+8SH9h6youT5dy67KKieoP6Lc/vlq3f+d5Fep7Zn9TVV+XXSPYvVAqIjgjdyyqQwBDgzchkzIDbw6gAJZxY2UBCjEBoCaTfgxUAAFBLAwQUAAAICAAGUvJWhXTKrwACAABvAwAACwAAAEpzb25TdG9yYWdlbFLbbuIwEP2VKM8pcpKGm8QDhLBQFoKaLCp9WYVkSNw6NrKd0gjx72tDoHR358HynDmey/EcTWT2j+ZaH7/jcBWOngI/NvvIUu5mFSyHi8Dsm2NIscCMiglPSjgw/t6KgH/gFH4mNfCrI64XP5EJYflf7kxCaRn/5rKMNXANDbot222hFrIMvyKy4jCgUEmeEMtYVVuC0znUMXsHOqAVIaZlJlmJKRaKIhlfYziElNSq4Z2OERInuRir4grRAE8L/AHZNd64igAK8jyn2+n0HHQzxUkT+lzRcLcjmELzTmFRlecgZMx+CeA3+DZkyLMzfM5QJDyHBcuAKGTJfCakhjmostlINxttojhYfIEhbVpqu10H2d1Oz3Z6yG1aAiqxrCeMqBqzsa5iT9HL4yZ6mW/m89ESeW4v8h33GQU39lIprZh+kUjjgGVh6NuPVawJn3tIpVahFrHqrtwTOBd/sFW0SGhGgF80PJqz7LwaI0wTXkdKctXs9k291wH7pPg4y4A2imChhx3uOfvE5WWiCxxkWPpsf/2okmV4hxsxHr7sLnQniOfYdleZ3XNcTwuy15shignj5VSL2zeHYgwC51R9tWWK7zt4U8xDo3an/fg0fI3d6SsaRmjVce/4l1S6gCiY2qsF22JynWEMWqXsuxfS/6+R0uUs3On0RwABBgBQSwECMwAUAAAICAAGUvJWGHs6jxUBAABJAQAAAQAAAAAAAAAAAAAAAAAAAAAAMVBLAQIzABQAAAgIAAZS8laFdMqvAAIAAG8DAAALAAAAAAAAAAAAAAAAADQBAABKc29uU3RvcmFnZVBLBQYAAAAAAgACAGgAAABdAwAAAAA=</Data>
   <RequiresApproval>false</RequiresApproval>
   <OverridingImport>false</OverridingImport>
   <ModuleName>Decisions.OpenAI</ModuleName>
   <ImportOrder>400</ImportOrder>
-  <ModifiedOn>2023-07-11T12:06:10.6482</ModifiedOn>
+  <ModifiedOn>2023-07-17T17:31:28.819235</ModifiedOn>
   <AllTagsData />
   <TagData />
 </ExportDescription>
