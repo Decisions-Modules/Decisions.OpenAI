@@ -53,8 +53,8 @@
       <IsDeclaredDependency>false</IsDeclaredDependency>
     </ExportDependency>
     <ExportDependency>
-      <Id>01H0WS0CW319N3TXE1TA842WFD.01H0X39QQBXMWGN8Q9QR9Y0XKK.ruleflow</Id>
-      <Name>Change Generate When Processing</Name>
+      <Id>01H0WS0CW319N3TXE1TA842WFD.01H0X2SPQK4ZHSZ2Z584SS32X8.ruleflow</Id>
+      <Name>Toggle Generate Button</Name>
       <TypeName>DecisionsFramework.ServiceLayer.Services.ConfigurationStorage.ElementRegistration</TypeName>
       <ShortTypeName>Flow</ShortTypeName>
       <IsDeclaredDependency>false</IsDeclaredDependency>
