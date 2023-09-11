@@ -1,20 +1,20 @@
 {
     "Resources": {
 	  "NoComponents": true,
-      "CoreServicesDlls": {
-        "string": "./Decisions.OpenAI/obj/Decisions.OpenAI.dll"
-      },
+      "CoreServicesDlls": [
+        "./Decisions.OpenAI/obj/Decisions.OpenAI.dll"
+      ],
       "CliDlls": "",
       "WebPages": "",
       "InstallScript": "",
       "SqlScripts": "",
-      "ObjectsToImport": {
-        "string": "./ImportedObjects/*.*"
-      },
+      "ObjectsToImport": [
+        "./ImportedObjects/*.*"
+      ],
       "MsSqlScript": "",
-      "CustomImages": {
-        "string": "./CustomModuleImages/*.*"
-      }
+      "CustomImages": [
+        "./CustomModuleImages/*.*"
+      ]
     },
     "Version": "8.13.0",
     "ImagePath": "./image.png",
