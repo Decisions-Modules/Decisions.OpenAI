@@ -1,0 +1,22 @@
+{
+    "Resources": {
+	  "NoComponents": true,
+      "CoreServicesDlls": {
+        "string": "./Decisions.OpenAI/obj/Decisions.OpenAI.dll"
+      },
+      "CliDlls": "",
+      "WebPages": "",
+      "InstallScript": "",
+      "SqlScripts": "",
+      "ObjectsToImport": {
+        "string": "./ImportedObjects/*.*"
+      },
+      "MsSqlScript": "",
+      "CustomImages": {
+        "string": "./CustomModuleImages/*.*"
+      }
+    },
+    "Version": "8.13.0",
+    "ImagePath": "./image.png",
+    "Description": "This module implements steps to utilize OpenAI. A secret key from an OpenAI account must be configured in the settings prior to use."
+}
