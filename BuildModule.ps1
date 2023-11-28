@@ -6,6 +6,11 @@ param (
 )
 
 function FindMSBuild {
+	$guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\msbuild.exe"
+    if (Test-Path -PathType leaf -LiteralPath $guess ) {
+        return $guess
+    }
+	
     $guess = &"${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -prerelease -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe
     if (Test-Path -PathType leaf -LiteralPath $guess) {
         return $guess
@@ -49,11 +54,6 @@ function FindMSBuild {
     }
 
     $guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\msbuild.exe"
-    if (Test-Path -PathType leaf -LiteralPath $guess ) {
-        return $guess
-    }
-	
-	$guess = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath "Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\msbuild.exe"
     if (Test-Path -PathType leaf -LiteralPath $guess ) {
         return $guess
     }
